@@ -1452,6 +1452,7 @@ img {
 
 .table__buttons .btn-grey {
   margin-right: auto;
+  padding: 0rem 2.5rem;
 }
 
 .vendors-table {
@@ -1866,17 +1867,17 @@ img {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 33px 0 27px 0;
-  border-bottom: 1px solid #e0e0e0;
+  padding: 2.0625rem 0 1.6875rem 0;
+  border-bottom: 0.0625rem solid #e0e0e0;
 }
 
 .vendors-list__row:first-child {
-  border-top: 1px solid #e0e0e0;
+  border-top: 0.0625rem solid #e0e0e0;
 }
 
 .vendors-list__text {
   font-weight: 500;
-  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 100%;
   color: #333333;
 }
