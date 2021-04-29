@@ -40,12 +40,13 @@ const openedBlock = (triggerBtn, block) => {
 
 window.addEventListener("DOMContentLoaded", () => {
   accordion(".sidebar__dropdown", ".sidebar__submenu");
-  openedBlock(".color__add-circle", ".color__change");
-  openedBlock(".table__row", ".edit-block");
-  openedBlock(".table__edit", ".plan-edit");
-  openedBlock(".table__row", ".reviews-edit");
   accordion(".submission-table__row", ".wedding-edit");
   accordion(".vendors-table__row", ".plan-edit");
+  openedBlock(".color__add-circle", ".color__change");
+  openedBlock(".homepage-row", ".edit-block");
+  openedBlock(".table__edit", ".plan-edit");
+  openedBlock(".reviews-table__row", ".reviews-edit");
+  openedBlock(".vendors-list__row", ".vendors-list__edit");
 });
 
 const template = document.getElementById("template");
