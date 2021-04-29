@@ -411,7 +411,7 @@ img {
   font-size: 1.125rem;
   line-height: 140%;
   color: #333333;
-  margin: 0rem 0rem 1.25rem 0rem;
+  margin: 0 0 1.25rem 0;
 }
 
 .media__label span {
@@ -1947,16 +1947,6 @@ img {
     left: -5rem;
   }
 
-  .seo-editor .flex {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    margin-bottom: 1.25rem;
-  }
-
-  .seo-editor .flex .media {
-    margin-bottom: 1.25rem;
-  }
-
   .color__label {
     margin-bottom: 1.25rem;
   }
@@ -2102,11 +2092,25 @@ img {
     display: block;
   }
 
+  .seo-editor .flex {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin-bottom: 1.25rem;
+  }
+
+  .seo-editor .flex .media {
+    margin-bottom: 1.25rem;
+  }
+
   .edit-block__row {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+  }
+
+  .table__img img {
+    max-width: none;
   }
 }
 
