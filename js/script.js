@@ -44,6 +44,7 @@ window.addEventListener("DOMContentLoaded", () => {
   accordion(".vendors-table__row", ".plan-edit");
   openedBlock(".color__add-circle", ".color__change");
   openedBlock(".homepage-row", ".edit-block");
+  openedBlock(".slider-row", ".edit-block");
   openedBlock(".table__edit", ".plan-edit");
   openedBlock(".reviews-table__row", ".reviews-edit");
   openedBlock(".vendors-list__row", ".vendors-list__edit");
