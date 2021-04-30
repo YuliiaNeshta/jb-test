@@ -1202,6 +1202,45 @@ img {
   grid-gap: 0rem 1.25rem;
 }
 
+.vendors-edit .wedding-edit__checkbox span {
+  width: auto;
+  padding: 0px 2.0625rem;
+}
+
+.vendors-edit__select {
+  width: 100%;
+  margin-bottom: 1.875rem;
+}
+
+.vendors-edit .category {
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  margin-right: -1.25rem;
+}
+
+.vendors-edit .category__btn span {
+  width: 100%;
+  text-align: center;
+}
+
+.vendors-edit .category__btn {
+  width: 33.333%;
+}
+
+.submission-vendors__row.active + .edit-block {
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  padding: 2.8125rem 0 3.125rem 0;
+  opacity: 1;
+  visibility: visible;
+  height: auto;
+}
+
+.submission-vendors__row.active + .edit-block:before {
+  display: block;
+}
+
 .table {
   margin-top: 5rem;
 }
