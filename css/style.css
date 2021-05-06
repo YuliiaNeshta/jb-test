@@ -64,7 +64,7 @@ img {
 .inner {
   width: 100%;
   background: #F5F5F5;
-  padding: 14.0625rem 0 6.25rem 12vw;
+  padding: 14.0625rem 0 6.25rem 15rem;
   overflow: hidden;
 }
 
@@ -275,6 +275,68 @@ img {
   color: #CB9274;
 }
 
+.checkbox-switcher__label {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 100%;
+  color: #333333;
+  cursor: pointer;
+}
+
+.checkbox-switcher__switcher {
+  cursor: pointer;
+}
+
+.checkbox-switcher__switcher label {
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.checkbox-switcher__switcher label input {
+  display: none;
+}
+
+.checkbox-switcher__switcher label input + span {
+  position: relative;
+  display: inline-block;
+  width: 42px;
+  height: 22px;
+  background: #bdbdbd;
+  border-radius: 12px;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  padding: 2px;
+  cursor: pointer;
+}
+
+.checkbox-switcher__switcher label input + span small {
+  position: absolute;
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border-radius: 50%;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  left: 3px;
+  top: 2.5px;
+}
+
+.checkbox-switcher__switcher label input:checked + span {
+  background: #CB9274;
+}
+
+.checkbox-switcher__switcher label input:checked + span small {
+  left: 50%;
+}
+
 .sidebar {
   width: 22.5rem;
   padding: 3.625rem 3.75rem;
@@ -407,6 +469,23 @@ img {
   margin-right: 2.375rem;
 }
 
+.media__edit-btn {
+  color: #c7c7c7;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.media__edit-btn svg {
+  width: 16px;
+  height: 16px;
+  margin-left: 24px;
+}
+
+.media__edit-btn:hover {
+  color: #333333;
+}
+
 .media__label {
   font-size: 1.125rem;
   line-height: 140%;
@@ -415,6 +494,12 @@ img {
 }
 
 .media__label span {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   color: #C5C5C5;
 }
 
@@ -427,6 +512,31 @@ img {
   background-repeat: no-repeat;
   background-position: center center;
   margin-right: 1.25rem;
+  position: relative;
+}
+
+.media__preview:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+.media__preview::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  background-image: url("../img/edit-white.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
 }
 
 .media__preview img {
@@ -434,6 +544,21 @@ img {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.media__preview--edited {
+  position: relative;
+}
+
+.media__preview--edited::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  left: -18px;
+  top: 0;
+  background-color: #CB9274;
 }
 
 .media__btn {
@@ -660,6 +785,17 @@ img {
   top: 3rem;
   right: 4.3125rem;
   text-align: end;
+}
+
+.header__back {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 12px;
+  text-align: right;
+  letter-spacing: 0.215em;
+  text-transform: uppercase;
+  color: #333333;
+  text-decoration: none;
 }
 
 .header__link {
@@ -1466,6 +1602,11 @@ img {
   padding: 0rem;
 }
 
+.table__edit svg {
+  width: 16px;
+  height: 16px;
+}
+
 .table__edit:hover {
   color: #333333;
 }
@@ -1482,6 +1623,11 @@ img {
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
   padding: 0rem;
+}
+
+.table__delete svg {
+  width: 1.1875rem;
+  height: 1.3125rem;
 }
 
 .table__delete:hover {
@@ -1753,14 +1899,21 @@ img {
   color: #bdbdbd;
   padding: 0rem;
   cursor: pointer;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.pagination__btn:hover {
+  color: #333;
 }
 
 .pagination__btn svg {
-  margin-right: 20px;
+  margin-right: 1.25rem;
 }
 
 .pagination__btn--next svg {
-  margin-left: 20px;
+  margin-left: 1.25rem;
   -webkit-transform: rotateZ(180deg);
       -ms-transform: rotate(180deg);
           transform: rotateZ(180deg);
@@ -1779,6 +1932,13 @@ img {
   text-align: center;
   color: #bdbdbd;
   text-decoration: none;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.pagination__number:hover {
+  color: #333;
 }
 
 .pagination__number + .pagination__number {
@@ -1806,13 +1966,13 @@ img {
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
-  margin-left: 40px;
+  margin-left: 2.5rem;
   padding: 0;
 }
 
 .wedding-edit__out svg {
-  width: 18px;
-  height: 17px;
+  width: 1.125rem;
+  height: 1.0625rem;
 }
 
 .wedding-edit__out:hover {
@@ -1825,12 +1985,12 @@ img {
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
-  margin-left: 17px;
+  margin-left: 1.0625rem;
 }
 
 .wedding-edit__copy svg {
-  width: 16px;
-  height: 17px;
+  width: 1rem;
+  height: 1.0625rem;
 }
 
 .wedding-edit__copy:hover {
@@ -1969,8 +2129,8 @@ img {
 }
 
 .wedding-submission__add {
-  width: 50px;
-  height: 50px;
+  width: 3.125rem;
+  height: 3.125rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1991,8 +2151,8 @@ img {
 }
 
 .remodal {
-  padding: 5rem 1.25rem;
-  background: #F1F1F1;
+  padding: 80px 20px;
+  background: #f1f1f1;
 }
 
 .remodal__question {
@@ -2008,6 +2168,11 @@ img {
   margin-right: 2vw;
 }
 
+.remodal-cancel:focus,
+.remodal-cancel:hover {
+  background: none;
+}
+
 .remodal-confirm:focus,
 .remodal-confirm:hover {
   background: transparent;
@@ -2015,21 +2180,170 @@ img {
 
 .remodal-overlay {
   background: rgba(0, 0, 0, 0.7);
-  -webkit-backdrop-filter: blur(18px);
-          backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(1.125rem);
+          backdrop-filter: blur(1.125rem);
 }
 
-@media only screen and (min-width: 641px) {
+.remodal-edit {
+  padding: 2.5rem 3.4375rem;
+  background: #ffffff;
+  text-align: initial;
+}
+
+.remodal-edit__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 3.75rem;
+}
+
+.remodal-edit__item {
+  padding: 0rem;
+  color: #E0E0E0;
+  margin-right: 3.4375rem;
+  font-size: 1.125rem;
+  line-height: 100%;
+}
+
+.remodal-edit__item svg {
+  margin-bottom: 0.9375rem;
+}
+
+.remodal-edit__item.active {
+  color: #CB9274;
+}
+
+.remodal-edit__item.disabled {
+  color: #BDBDBD;
+}
+
+.remodal-edit__item.selected {
+  color: #333;
+  position: relative;
+}
+
+.remodal-edit__item.selected::before {
+  content: "";
+  height: 1.3125rem;
+  width: 1.3125rem;
+  position: absolute;
+  bottom: -1.75rem;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background-image: url(../img/check-gold.svg);
+  background-repeat: no-repeat;
+  background-size: 1.3125rem 1.3125rem;
+  background-repeat: no-repeat;
+}
+
+.remodal-edit__choice {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.remodal-edit__counter {
+  font-size: 1.125rem;
+  line-height: 100%;
+  color: #828282;
+  margin-left: 2.5rem;
+}
+
+.remodal-edit__buttons {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.remodal-edit__buttons .btn-grey {
+  margin-right: 1.25rem;
+}
+
+.remodal-edit__text {
+  font-weight: bold;
+  font-size: 1.125rem;
+  line-height: 100%;
+  margin-bottom: 1.875rem;
+  text-align: left;
+}
+
+.remodal-edit__img {
+  display: none;
+}
+
+.remodal-edit__img img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+
+.remodal-edit__descr {
+  font-size: 1.125rem;
+  line-height: 140%;
+  color: #bdbdbd;
+  height: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  margin-bottom: 3.75rem;
+}
+
+.remodal-edit__photo {
+  margin-right: 2.5rem;
+  min-width: 50%;
+}
+
+.remodal-edit__wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.detail-section__title {
+  font-weight: bold;
+  font-size: 1.5rem;
+  line-height: 100%;
+  color: #333333;
+  margin-bottom: 3.125rem;
+}
+
+.detail-section__textarea {
+  margin-bottom: 2.5rem;
+}
+
+.detail-section__resources {
+  margin-bottom: 50px;
+}
+
+.detail-section__row {
+  display: grid;
+  grid-template-columns: 15rem 1fr 11.875rem;
+  grid-template-rows: 1fr;
+  grid-gap: 0rem 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+@media only screen and (min-width: 40.0625rem) {
   .remodal {
     max-width: 49vw;
+  }
+
+  .remodal-edit {
+    max-width: 70.5rem;
   }
 }
 
 @media screen and (max-width: 1560px) {
-  .inner {
-    padding: 9.375rem 0 9.375rem 8vw;
-  }
-
   .italic-title::before {
     width: 3.75rem;
     left: -5rem;

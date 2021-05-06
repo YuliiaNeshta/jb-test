@@ -1,50 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-    />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Admin panel | Jewish Brides</title>
-    <script
-      src="https://use.typekit.net/duu4dza.js"
-      type="text/javascript"
-    ></script>
-    <script type="text/javascript">
-      try {
-        Typekit.load();
-      } catch (e) {}
-    </script>
-    <link href="./img/favicon.svg" rel="shortcut icon" type="image/x-icon" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css"
-      integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ=="
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.1.1/remodal.min.css"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.1.1/remodal-default-theme.min.css"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link rel="stylesheet" href="./css/style.css" />
-  </head>
-  <body>
-    <div class="wrapper remodal-bg">
-      <div class="sidebar-sticky">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport"
+		content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Admin panel | Jewish Brides</title>
+	<script src="https://use.typekit.net/duu4dza.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		try {
+			Typekit.load();
+		} catch (e) {}
+	</script>
+	<link href="./img/favicon.svg" rel="shortcut icon" type="image/x-icon" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css"
+		integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ=="
+		crossorigin="anonymous" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+		integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+		crossorigin="anonymous" />
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.1.1/remodal.min.css" rel="stylesheet" type="text/css" />
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.1.1/remodal-default-theme.min.css" rel="stylesheet"
+		type="text/css" />
+	<link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+	<div class="wrapper">
+		<div class="sidebar-sticky">
 	<nav class="sidebar">
 		<img class="sidebar__logo sidebar__logo--text" src="./img/logo-text.svg" alt="Jewish Brides" />
 		<img class="sidebar__logo--min" src="./img/JB.svg" alt="Jewish Brides" />
@@ -172,136 +156,201 @@
 		</ul>
 	</nav>
 </div>
-      <div class="inner">
-        <div class="container">
-          <div class="header">
-            <a href="#" class="header__link">go to live website</a>
-            <p class="header__current">admin panel</p>
-          </div>
-          <section class="live-editor section">
-            <h2 class="italic-title">LIVE page editor</h2>
-            <p class="text">
-              Click on the button “Edit” if you want to change text and photo
-              content on the page.
-            </p>
-            <button type="submit" class="btn">Edit</button>
-          </section>
-          <section class="seo-editor section">
-            <h2 class="italic-title">SEO Meta Data</h2>
-            <div class="flex">
-              <div class="media">
-                <p class="media__label">
-                  Social media thumbnail <span>(1200*620px)</span>
-                </p>
-                <div class="media__wrap">
-                  <div class="media__preview"></div>
-                  <button class="media__btn btn">upload</button>
-                  <button class="media__btn btn-grey">Delete</button>
-                </div>
-              </div>
-              <div class="media__input input">
-                <label class="input__label" for="meta"
-                  >Meta Title <span>(up to 60 symbols)</span></label
-                >
-                <input
-                  class="input__field"
-                  id="meta"
-                  value="How it works | Jewish Brides"
-                />
-              </div>
-            </div>
-            <div class="textarea">
-              <label class="textarea__label label" for="textarea-meta"
-                >Meta Description <span>(up to 200 symbols)</span></label
-              >
-              <textarea
-                class="textarea__field"
-                name=""
-                id="textarea-meta"
-              ></textarea>
-            </div>
-          </section>
-          <section class="slider-edit section">
-            <h2 class="italic-title">Hero screen Photos</h2>
-            <p class="slider-edit__text text">
-              Choose photos which you want to show in first section of the
-              homepage.
-            </p>
-            <button class="btn">upload</button>
-            <div class="table">
-              <div class="table__head">
-                <h3 class="table__title">Slider photos</h3>
-                <button class="table__remove">
-                  <svg
-                    width="16"
-                    height="19"
-                    viewBox="0 0 16 19"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M9.42188 14.875H10.2656C10.4766 14.875 10.6875 14.6992 10.6875 14.4531V6.85938C10.6875 6.64844 10.4766 6.4375 10.2656 6.4375H9.42188C9.17578 6.4375 9 6.64844 9 6.85938V14.4531C9 14.6992 9.17578 14.875 9.42188 14.875ZM15.1875 3.0625H12.2695L11.0742 1.09375C10.793 0.601562 10.2305 0.25 9.63281 0.25H6.08203C5.48438 0.25 4.92188 0.601562 4.64062 1.09375L3.44531 3.0625H0.5625C0.246094 3.0625 0 3.34375 0 3.625V4.1875C0 4.50391 0.246094 4.75 0.5625 4.75H1.125V16.5625C1.125 17.5117 1.86328 18.25 2.8125 18.25H12.9375C13.8516 18.25 14.625 17.5117 14.625 16.5625V4.75H15.1875C15.4688 4.75 15.75 4.50391 15.75 4.1875V3.625C15.75 3.34375 15.4688 3.0625 15.1875 3.0625ZM6.01172 2.04297C6.04688 2.00781 6.11719 1.9375 6.1875 1.9375C6.1875 1.9375 6.1875 1.9375 6.22266 1.9375H9.52734C9.59766 1.9375 9.66797 2.00781 9.70312 2.04297L10.3008 3.0625H5.41406L6.01172 2.04297ZM12.9375 16.5625H2.8125V4.75H12.9375V16.5625ZM5.48438 14.875H6.32812C6.53906 14.875 6.75 14.6992 6.75 14.4531V6.85938C6.75 6.64844 6.53906 6.4375 6.32812 6.4375H5.48438C5.23828 6.4375 5.0625 6.64844 5.0625 6.85938V14.4531C5.0625 14.6992 5.23828 14.875 5.48438 14.875Z"
-                      fill="currentColor"
-                    />
-                  </svg>
-                  Remove
-                </button>
-              </div>
-              <div class="table__thead">
-                <span class="table__th"> Photo </span>
-                <span class="table__th table__th--heading"> Heading </span>
-                <span class="table__th"> Description </span>
-              </div>
-              <div class="flex">
-                <label class="table__label checkbox">
-                  <input class="checkbox__input" type="checkbox" />
-                  <span></span>
-                </label>
-                <div class="table__row slider-row">
-                  <div class="table__img">
-                    <img src="./img/photo-example-2.png" alt="" />
-                  </div>
-                  <p class="table__heading">
-                    Just got wind of an amazing idea from one of our followers
-                  </p>
-                  <p class="table__descr">
-                    Just got wind of an amazing idea from one of our followers.
-                    Do you know whats an unplugged....
-                  </p>
-                  <button class="table__edit">
-                    <svg
-                      width="18"
-                      height="18"
-                      viewBox="0 0 18 18"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M1.5 11.2857L0.960449 10.7648L0.75 10.9827V11.2857H1.5ZM11.431 1L11.9706 0.479054C11.8293 0.332674 11.6345 0.25 11.431 0.25C11.2276 0.25 11.0328 0.332674 10.8915 0.479054L11.431 1ZM16.9483 6.71429L17.4878 7.23523C17.7684 6.94461 17.7684 6.48396 17.4878 6.19334L16.9483 6.71429ZM7.01724 17V17.75H7.33564L7.55679 17.5209L7.01724 17ZM1.5 17H0.75C0.75 17.4142 1.08579 17.75 1.5 17.75L1.5 17ZM2.03955 11.8067L11.9706 1.52095L10.8915 0.479054L0.960449 10.7648L2.03955 11.8067ZM10.8915 1.52095L16.4087 7.23523L17.4878 6.19334L11.9706 0.479054L10.8915 1.52095ZM16.4087 6.19334L6.47769 16.4791L7.55679 17.5209L17.4878 7.23523L16.4087 6.19334ZM7.01724 16.25H1.5V17.75H7.01724V16.25ZM2.25 17V11.2857H0.75V17H2.25ZM7.58114 4.94952L13.0984 10.6638L14.1775 9.62191L8.66024 3.90763L7.58114 4.94952ZM9.77586 17.75H17.5V16.25H9.77586V17.75Z"
-                        fill="currentColor"
-                      />
-                    </svg>
-                  </button>
-                  <button
-                    class="table__delete"
-                    data-remodal-target="confirm-modal"
-                  >
-                    <svg
-                      width="17"
-                      height="19"
-                      viewBox="0 0 17 19"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M10.2773 15.5894H11.1211C11.332 15.5894 11.543 15.4136 11.543 15.1675V7.57373C11.543 7.36279 11.332 7.15186 11.1211 7.15186H10.2773C10.0312 7.15186 9.85547 7.36279 9.85547 7.57373V15.1675C9.85547 15.4136 10.0312 15.5894 10.2773 15.5894ZM16.043 3.77686H13.125L11.9297 1.80811C11.6484 1.31592 11.0859 0.964355 10.4883 0.964355H6.9375C6.33984 0.964355 5.77734 1.31592 5.49609 1.80811L4.30078 3.77686H1.41797C1.10156 3.77686 0.855469 4.05811 0.855469 4.33936V4.90186C0.855469 5.21826 1.10156 5.46436 1.41797 5.46436H1.98047V17.2769C1.98047 18.2261 2.71875 18.9644 3.66797 18.9644H13.793C14.707 18.9644 15.4805 18.2261 15.4805 17.2769V5.46436H16.043C16.3242 5.46436 16.6055 5.21826 16.6055 4.90186V4.33936C16.6055 4.05811 16.3242 3.77686 16.043 3.77686ZM6.86719 2.75732C6.90234 2.72217 6.97266 2.65186 7.04297 2.65186C7.04297 2.65186 7.04297 2.65186 7.07812 2.65186H10.3828C10.4531 2.65186 10.5234 2.72217 10.5586 2.75732L11.1562 3.77686H6.26953L6.86719 2.75732ZM13.793 17.2769H3.66797V5.46436H13.793V17.2769ZM6.33984 15.5894H7.18359C7.39453 15.5894 7.60547 15.4136 7.60547 15.1675V7.57373C7.60547 7.36279 7.39453 7.15186 7.18359 7.15186H6.33984C6.09375 7.15186 5.91797 7.36279 5.91797 7.57373V15.1675C5.91797 15.4136 6.09375 15.5894 6.33984 15.5894Z"
-                        fill="currentColor"
-                      />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-              
+		<div class="inner">
+			<div class="container">
+				<div class="header">
+					<a class="header__back" href="weddings.html">Back to submissions list</a>
+					<a href="#" class="header__link">go to live website</a>
+					<p class="header__current">admin panel</p>
+				</div>
+				<section class="section">
+					<h2 class="italic-title">Publish a wedding</h2>
+					<section class="section detail-section">
+						<p class="detail-section__title">Wedding details</p>
+						<div class="input plan-edit__input-wrap">
+							<label class="input__label">Heading <span>(up to 100 symbols)</span></label>
+							<input class="input__field" value="Jack & Maria's Amazing Wedding in New York City" />
+						</div>
+						<div class="textarea detail-section__textarea">
+							<label class="textarea__label label" for="textarea-meta">Description <span>(up to 800
+									symbols)</span></label>
+							<textarea class="textarea__field" name=""></textarea>
+						</div>
+						<div class="detail-section__resources">
+							<p class="label">
+								Wedding Resources
+							</p>
+							<div class="detail-section__row">
+								<select class="detail-section__select select">
+									<option>Photographer</option>
+									<option>Florist</option>
+									<option>Videographer</option>
+									<option>Planner</option>
+									<option>Band</option>
+									<option>Stationery</option>
+									<option>DJ</option>
+								</select>
+								<div class="input">
+									<input class="input__field" value="Jack & Maria's Amazing Wedding in New York City" />
+								</div>
+								<button class="btn-grey">Delete</button>
+							</div>
+							<div class="detail-section__row">
+								<select class="detail-section__select select">
+									<option>Photographer</option>
+									<option>Florist</option>
+									<option>Videographer</option>
+									<option>Planner</option>
+									<option>Band</option>
+									<option>Stationery</option>
+									<option>DJ</option>
+								</select>
+								<div class="input">
+									<input class="input__field" value="Jack & Maria's Amazing Wedding in New York City" />
+								</div>
+								<button class="btn-grey">Delete</button>
+							</div>
+							<button class="table__add">
+								<svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M12.375 7.6875C12.375 7.47656 12.1641 7.26562 11.9531 7.26562H8.85938V4.17188C8.85938 3.96094 8.64844 3.75 8.4375 3.75H7.3125C7.06641 3.75 6.89062 3.96094 6.89062 4.17188V7.26562H3.79688C3.55078 7.26562 3.375 7.47656 3.375 7.6875V8.8125C3.375 9.05859 3.55078 9.23438 3.79688 9.23438H6.89062V12.3281C6.89062 12.5742 7.06641 12.75 7.3125 12.75H8.4375C8.64844 12.75 8.85938 12.5742 8.85938 12.3281V9.23438H11.9531C12.1641 9.23438 12.375 9.05859 12.375 8.8125V7.6875ZM15.75 2.0625C15.75 1.14844 14.9766 0.375 14.0625 0.375H1.6875C0.738281 0.375 0 1.14844 0 2.0625V14.4375C0 15.3867 0.738281 16.125 1.6875 16.125H14.0625C14.9766 16.125 15.75 15.3867 15.75 14.4375V2.0625ZM14.0625 14.2266C14.0625 14.3672 13.957 14.4375 13.8516 14.4375H1.89844C1.75781 14.4375 1.6875 14.3672 1.6875 14.2266V2.27344C1.6875 2.16797 1.75781 2.0625 1.89844 2.0625H13.8516C13.957 2.0625 14.0625 2.16797 14.0625 2.27344V14.2266Z"
+										fill="currentColor" />
+								</svg>
+								Add
+							</button>
+						</div>
+						<p class="detail-section__title">Highlights</p>
+						<div class="color-wrapper">
+							<p class="color__label label">
+								Color
+							</p>
+							<div class="color">
+								<div class="color__wrap" style="background-color: #695439;">
+								</div>
+								<div class="color__wrap" style="background-color: #8F6252;">
+								</div>
+								<div class="color__wrap" style="background-color: #8B6B3B;">
+								</div>
+								<div class="color__wrap" style="background-color: #8B6B3B;">
+								</div>
+								<div class="color__wrap" style="background-color: #8B6B3B;">
+								</div>
+								<div class="color__wrap" style="background-color: #F3F3F2; border: 1px solid #BDBDBD;">
+								</div>
+								<div class="color__add">
+									<div class="color__add-circle">
+									</div>
+									<span class="color__btn">add</span>
+									<div class="color__change">
+										<div class="color__change--wrap">
+											<div class="color__new" style="background: #EB5757;">
+											</div>
+											<div class="color__new" style="background: #F2994A;">
+											</div>
+											<div class="color__new" style="background: #F2C94C;">
+											</div>
+											<div class="color__new" style="background: #56CCF2;">
+											</div>
+											<div class="color__new" style="background: #219653;">
+											</div>
+											<div class="color__new" style="background: #9B51E0;">
+											</div>
+											<div class="color__new" style="background: #42D691;">
+											</div>
+											<div class="color__new" style="background: #BDBDBD;">
+											</div>
+											<div class="color__new" style="background: #D44E4E;">
+											</div>
+											<div class="color__new" style="background: #DA8A43;">
+											</div>
+											<div class="color__new" style="background: #DAB544;">
+											</div>
+											<div class="color__new" style="background: #4DB8DA;">
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+						<div class="detail-section__row">
+							<select class="detail-section__select select">
+								<option>Photographer</option>
+								<option>Florist</option>
+								<option>Videographer</option>
+								<option>Planner</option>
+								<option>Band</option>
+								<option>Stationery</option>
+								<option>DJ</option>
+							</select>
+							<div class="input">
+								<input class="input__field" value="Jack & Maria's Amazing Wedding in New York City" />
+							</div>
+							<button class="btn-grey">Delete</button>
+						</div>
+						<button class="table__add">
+							<svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M12.375 7.6875C12.375 7.47656 12.1641 7.26562 11.9531 7.26562H8.85938V4.17188C8.85938 3.96094 8.64844 3.75 8.4375 3.75H7.3125C7.06641 3.75 6.89062 3.96094 6.89062 4.17188V7.26562H3.79688C3.55078 7.26562 3.375 7.47656 3.375 7.6875V8.8125C3.375 9.05859 3.55078 9.23438 3.79688 9.23438H6.89062V12.3281C6.89062 12.5742 7.06641 12.75 7.3125 12.75H8.4375C8.64844 12.75 8.85938 12.5742 8.85938 12.3281V9.23438H11.9531C12.1641 9.23438 12.375 9.05859 12.375 8.8125V7.6875ZM15.75 2.0625C15.75 1.14844 14.9766 0.375 14.0625 0.375H1.6875C0.738281 0.375 0 1.14844 0 2.0625V14.4375C0 15.3867 0.738281 16.125 1.6875 16.125H14.0625C14.9766 16.125 15.75 15.3867 15.75 14.4375V2.0625ZM14.0625 14.2266C14.0625 14.3672 13.957 14.4375 13.8516 14.4375H1.89844C1.75781 14.4375 1.6875 14.3672 1.6875 14.2266V2.27344C1.6875 2.16797 1.75781 2.0625 1.89844 2.0625H13.8516C13.957 2.0625 14.0625 2.16797 14.0625 2.27344V14.2266Z"
+									fill="currentColor" />
+							</svg>
+							Add
+						</button>
+					</section>
+					<section class="section post">
+						<h2 class="italic-title">
+							Post body
+						</h2>
+						<p class="post__title">
+							Post content field
+						</p>
+						<div class="post-field">
+
+						</div>
+					</section>
+					<section class="section">
+						<h2 class="italic-title">Wedding Gallery</h2>
+						<div class="table">
+							<div class="table__thead">
+								<span class="table__th"> Photo </span>
+								<span class="table__th table__th--heading"> Heading </span>
+								<span class="table__th"> Description </span>
+							</div>
+							<div class="flex">
+								<label class="table__label checkbox">
+									<input class="checkbox__input" type="checkbox" />
+									<span></span>
+								</label>
+								<div class="table__row homepage-row">
+									<div class="table__img">
+										<img src="./img/photo.png" alt="" />
+									</div>
+									<p class="table__heading">
+										Absolutely in LOVE with Marina Valery's gown
+										designs.Absolutely in LOVE with....
+									</p>
+									<p class="table__descr">
+										This is so amazing, as it gives the guests the opportunity
+										to really be in the moment with couple and be there
+										for....
+									</p>
+									<button class="table__edit">
+										<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M1.5 11.2857L0.960449 10.7648L0.75 10.9827V11.2857H1.5ZM11.431 1L11.9706 0.479054C11.8293 0.332674 11.6345 0.25 11.431 0.25C11.2276 0.25 11.0328 0.332674 10.8915 0.479054L11.431 1ZM16.9483 6.71429L17.4878 7.23523C17.7684 6.94461 17.7684 6.48396 17.4878 6.19334L16.9483 6.71429ZM7.01724 17V17.75H7.33564L7.55679 17.5209L7.01724 17ZM1.5 17H0.75C0.75 17.4142 1.08579 17.75 1.5 17.75L1.5 17ZM2.03955 11.8067L11.9706 1.52095L10.8915 0.479054L0.960449 10.7648L2.03955 11.8067ZM10.8915 1.52095L16.4087 7.23523L17.4878 6.19334L11.9706 0.479054L10.8915 1.52095ZM16.4087 6.19334L6.47769 16.4791L7.55679 17.5209L17.4878 7.23523L16.4087 6.19334ZM7.01724 16.25H1.5V17.75H7.01724V16.25ZM2.25 17V11.2857H0.75V17H2.25ZM7.58114 4.94952L13.0984 10.6638L14.1775 9.62191L8.66024 3.90763L7.58114 4.94952ZM9.77586 17.75H17.5V16.25H9.77586V17.75Z"
+												fill="currentColor" />
+										</svg>
+									</button>
+									<button class="table__delete" data-remodal-target="confirm-modal">
+										<svg width="17" height="19" viewBox="0 0 17 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M10.2773 15.5894H11.1211C11.332 15.5894 11.543 15.4136 11.543 15.1675V7.57373C11.543 7.36279 11.332 7.15186 11.1211 7.15186H10.2773C10.0312 7.15186 9.85547 7.36279 9.85547 7.57373V15.1675C9.85547 15.4136 10.0312 15.5894 10.2773 15.5894ZM16.043 3.77686H13.125L11.9297 1.80811C11.6484 1.31592 11.0859 0.964355 10.4883 0.964355H6.9375C6.33984 0.964355 5.77734 1.31592 5.49609 1.80811L4.30078 3.77686H1.41797C1.10156 3.77686 0.855469 4.05811 0.855469 4.33936V4.90186C0.855469 5.21826 1.10156 5.46436 1.41797 5.46436H1.98047V17.2769C1.98047 18.2261 2.71875 18.9644 3.66797 18.9644H13.793C14.707 18.9644 15.4805 18.2261 15.4805 17.2769V5.46436H16.043C16.3242 5.46436 16.6055 5.21826 16.6055 4.90186V4.33936C16.6055 4.05811 16.3242 3.77686 16.043 3.77686ZM6.86719 2.75732C6.90234 2.72217 6.97266 2.65186 7.04297 2.65186C7.04297 2.65186 7.04297 2.65186 7.07812 2.65186H10.3828C10.4531 2.65186 10.5234 2.72217 10.5586 2.75732L11.1562 3.77686H6.26953L6.86719 2.75732ZM13.793 17.2769H3.66797V5.46436H13.793V17.2769ZM6.33984 15.5894H7.18359C7.39453 15.5894 7.60547 15.4136 7.60547 15.1675V7.57373C7.60547 7.36279 7.39453 7.15186 7.18359 7.15186H6.33984C6.09375 7.15186 5.91797 7.36279 5.91797 7.57373V15.1675C5.91797 15.4136 6.09375 15.5894 6.33984 15.5894Z"
+												fill="currentColor" />
+										</svg>
+									</button>
+								</div>
+							</div>
+							
 <div class="edit-block">
     <div class="edit-block__row">
         <div class="media">
@@ -454,56 +503,41 @@
         <input class="link-tippy" placeholder="Type or paste URL"></input>
     </div>
 </div>
-              <div class="flex">
-                <label class="table__label checkbox">
-                  <input class="checkbox__input" type="checkbox" />
-                  <span></span>
-                </label>
-                <div class="table__row slider-row">
-                  <div class="table__img">
-                    <img src="./img/photo-example-2.png" alt="" />
-                  </div>
-                  <p class="table__heading">
-                    Just got wind of an amazing idea from one of our followers
-                  </p>
-                  <p class="table__descr">
-                    Just got wind of an amazing idea from one of our followers.
-                    Do you know whats an unplugged....
-                  </p>
-                  <button class="table__edit">
-                    <svg
-                      width="18"
-                      height="18"
-                      viewBox="0 0 18 18"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M1.5 11.2857L0.960449 10.7648L0.75 10.9827V11.2857H1.5ZM11.431 1L11.9706 0.479054C11.8293 0.332674 11.6345 0.25 11.431 0.25C11.2276 0.25 11.0328 0.332674 10.8915 0.479054L11.431 1ZM16.9483 6.71429L17.4878 7.23523C17.7684 6.94461 17.7684 6.48396 17.4878 6.19334L16.9483 6.71429ZM7.01724 17V17.75H7.33564L7.55679 17.5209L7.01724 17ZM1.5 17H0.75C0.75 17.4142 1.08579 17.75 1.5 17.75L1.5 17ZM2.03955 11.8067L11.9706 1.52095L10.8915 0.479054L0.960449 10.7648L2.03955 11.8067ZM10.8915 1.52095L16.4087 7.23523L17.4878 6.19334L11.9706 0.479054L10.8915 1.52095ZM16.4087 6.19334L6.47769 16.4791L7.55679 17.5209L17.4878 7.23523L16.4087 6.19334ZM7.01724 16.25H1.5V17.75H7.01724V16.25ZM2.25 17V11.2857H0.75V17H2.25ZM7.58114 4.94952L13.0984 10.6638L14.1775 9.62191L8.66024 3.90763L7.58114 4.94952ZM9.77586 17.75H17.5V16.25H9.77586V17.75Z"
-                        fill="currentColor"
-                      />
-                    </svg>
-                  </button>
-                  <button
-                    class="table__delete"
-                    data-remodal-target="confirm-modal"
-                  >
-                    <svg
-                      width="17"
-                      height="19"
-                      viewBox="0 0 17 19"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M10.2773 15.5894H11.1211C11.332 15.5894 11.543 15.4136 11.543 15.1675V7.57373C11.543 7.36279 11.332 7.15186 11.1211 7.15186H10.2773C10.0312 7.15186 9.85547 7.36279 9.85547 7.57373V15.1675C9.85547 15.4136 10.0312 15.5894 10.2773 15.5894ZM16.043 3.77686H13.125L11.9297 1.80811C11.6484 1.31592 11.0859 0.964355 10.4883 0.964355H6.9375C6.33984 0.964355 5.77734 1.31592 5.49609 1.80811L4.30078 3.77686H1.41797C1.10156 3.77686 0.855469 4.05811 0.855469 4.33936V4.90186C0.855469 5.21826 1.10156 5.46436 1.41797 5.46436H1.98047V17.2769C1.98047 18.2261 2.71875 18.9644 3.66797 18.9644H13.793C14.707 18.9644 15.4805 18.2261 15.4805 17.2769V5.46436H16.043C16.3242 5.46436 16.6055 5.21826 16.6055 4.90186V4.33936C16.6055 4.05811 16.3242 3.77686 16.043 3.77686ZM6.86719 2.75732C6.90234 2.72217 6.97266 2.65186 7.04297 2.65186C7.04297 2.65186 7.04297 2.65186 7.07812 2.65186H10.3828C10.4531 2.65186 10.5234 2.72217 10.5586 2.75732L11.1562 3.77686H6.26953L6.86719 2.75732ZM13.793 17.2769H3.66797V5.46436H13.793V17.2769ZM6.33984 15.5894H7.18359C7.39453 15.5894 7.60547 15.4136 7.60547 15.1675V7.57373C7.60547 7.36279 7.39453 7.15186 7.18359 7.15186H6.33984C6.09375 7.15186 5.91797 7.36279 5.91797 7.57373V15.1675C5.91797 15.4136 6.09375 15.5894 6.33984 15.5894Z"
-                        fill="currentColor"
-                      />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-              
+							<div class="flex">
+								<label class="table__label checkbox">
+									<input class="checkbox__input" type="checkbox" />
+									<span></span>
+								</label>
+								<div class="table__row homepage-row">
+									<div class="table__img">
+										<img src="./img/photo.png" alt="" />
+									</div>
+									<p class="table__heading">
+										Absolutely in LOVE with Marina Valery's gown
+										designs.Absolutely in LOVE with....
+									</p>
+									<p class="table__descr">
+										This is so amazing, as it gives the guests the opportunity
+										to really be in the moment with couple and be there
+										for....
+									</p>
+									<button class="table__edit">
+										<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M1.5 11.2857L0.960449 10.7648L0.75 10.9827V11.2857H1.5ZM11.431 1L11.9706 0.479054C11.8293 0.332674 11.6345 0.25 11.431 0.25C11.2276 0.25 11.0328 0.332674 10.8915 0.479054L11.431 1ZM16.9483 6.71429L17.4878 7.23523C17.7684 6.94461 17.7684 6.48396 17.4878 6.19334L16.9483 6.71429ZM7.01724 17V17.75H7.33564L7.55679 17.5209L7.01724 17ZM1.5 17H0.75C0.75 17.4142 1.08579 17.75 1.5 17.75L1.5 17ZM2.03955 11.8067L11.9706 1.52095L10.8915 0.479054L0.960449 10.7648L2.03955 11.8067ZM10.8915 1.52095L16.4087 7.23523L17.4878 6.19334L11.9706 0.479054L10.8915 1.52095ZM16.4087 6.19334L6.47769 16.4791L7.55679 17.5209L17.4878 7.23523L16.4087 6.19334ZM7.01724 16.25H1.5V17.75H7.01724V16.25ZM2.25 17V11.2857H0.75V17H2.25ZM7.58114 4.94952L13.0984 10.6638L14.1775 9.62191L8.66024 3.90763L7.58114 4.94952ZM9.77586 17.75H17.5V16.25H9.77586V17.75Z"
+												fill="currentColor" />
+										</svg>
+									</button>
+									<button class="table__delete" data-remodal-target="confirm-modal">
+										<svg width="17" height="19" viewBox="0 0 17 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M10.2773 15.5894H11.1211C11.332 15.5894 11.543 15.4136 11.543 15.1675V7.57373C11.543 7.36279 11.332 7.15186 11.1211 7.15186H10.2773C10.0312 7.15186 9.85547 7.36279 9.85547 7.57373V15.1675C9.85547 15.4136 10.0312 15.5894 10.2773 15.5894ZM16.043 3.77686H13.125L11.9297 1.80811C11.6484 1.31592 11.0859 0.964355 10.4883 0.964355H6.9375C6.33984 0.964355 5.77734 1.31592 5.49609 1.80811L4.30078 3.77686H1.41797C1.10156 3.77686 0.855469 4.05811 0.855469 4.33936V4.90186C0.855469 5.21826 1.10156 5.46436 1.41797 5.46436H1.98047V17.2769C1.98047 18.2261 2.71875 18.9644 3.66797 18.9644H13.793C14.707 18.9644 15.4805 18.2261 15.4805 17.2769V5.46436H16.043C16.3242 5.46436 16.6055 5.21826 16.6055 4.90186V4.33936C16.6055 4.05811 16.3242 3.77686 16.043 3.77686ZM6.86719 2.75732C6.90234 2.72217 6.97266 2.65186 7.04297 2.65186C7.04297 2.65186 7.04297 2.65186 7.07812 2.65186H10.3828C10.4531 2.65186 10.5234 2.72217 10.5586 2.75732L11.1562 3.77686H6.26953L6.86719 2.75732ZM13.793 17.2769H3.66797V5.46436H13.793V17.2769ZM6.33984 15.5894H7.18359C7.39453 15.5894 7.60547 15.4136 7.60547 15.1675V7.57373C7.60547 7.36279 7.39453 7.15186 7.18359 7.15186H6.33984C6.09375 7.15186 5.91797 7.36279 5.91797 7.57373V15.1675C5.91797 15.4136 6.09375 15.5894 6.33984 15.5894Z"
+												fill="currentColor" />
+										</svg>
+									</button>
+								</div>
+							</div>
+							
 <div class="edit-block">
     <div class="edit-block__row">
         <div class="media">
@@ -656,46 +690,72 @@
         <input class="link-tippy" placeholder="Type or paste URL"></input>
     </div>
 </div>
-            </div>
-            <div class="table__buttons">
-              <button class="btn-grey">Save as draft</button>
-              <button class="btn table__btn">Publish</button>
-              <button class="btn-border">Preview</button>
-            </div>
-          </section>
+						</div>
+						<button class="table__add">
+							<svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M12.375 7.6875C12.375 7.47656 12.1641 7.26562 11.9531 7.26562H8.85938V4.17188C8.85938 3.96094 8.64844 3.75 8.4375 3.75H7.3125C7.06641 3.75 6.89062 3.96094 6.89062 4.17188V7.26562H3.79688C3.55078 7.26562 3.375 7.47656 3.375 7.6875V8.8125C3.375 9.05859 3.55078 9.23438 3.79688 9.23438H6.89062V12.3281C6.89062 12.5742 7.06641 12.75 7.3125 12.75H8.4375C8.64844 12.75 8.85938 12.5742 8.85938 12.3281V9.23438H11.9531C12.1641 9.23438 12.375 9.05859 12.375 8.8125V7.6875ZM15.75 2.0625C15.75 1.14844 14.9766 0.375 14.0625 0.375H1.6875C0.738281 0.375 0 1.14844 0 2.0625V14.4375C0 15.3867 0.738281 16.125 1.6875 16.125H14.0625C14.9766 16.125 15.75 15.3867 15.75 14.4375V2.0625ZM14.0625 14.2266C14.0625 14.3672 13.957 14.4375 13.8516 14.4375H1.89844C1.75781 14.4375 1.6875 14.3672 1.6875 14.2266V2.27344C1.6875 2.16797 1.75781 2.0625 1.89844 2.0625H13.8516C13.957 2.0625 14.0625 2.16797 14.0625 2.27344V14.2266Z"
+									fill="currentColor" />
+							</svg>
+							Add
+						</button>
+					</section>
+					<section class="seo-editor section">
+						<h2 class="italic-title">SEO Meta Data</h2>
+						<div class="flex">
+							<div class="media">
+								<p class="media__label">
+									Social media thumbnail <span>(1200*620px)</span>
+								</p>
+								<div class="media__wrap">
+									<div class="media__preview"></div>
+									<button class="media__btn btn">upload</button>
+									<button class="media__btn btn-grey">Delete</button>
+								</div>
+							</div>
+							<div class="media__input input">
+								<label class="input__label" for="meta">Meta Title <span>(up to 60 symbols)</span></label>
+								<input class="input__field" id="meta" value="Home | Jewish Brides" />
+							</div>
+						</div>
+						<div class="textarea">
+							<label class="textarea__label label" for="textarea-meta">Meta Description <span>(up to 200
+									symbols)</span></label>
+							<textarea class="textarea__field" name="" id="textarea-meta"></textarea>
+						</div>
+					</section>
+					<section class="section settings-blog">
+						<h2 class="italic-title">publishing settings</h2>
+						<div class="checkbox-switcher">
+							<div class="checkbox-switcher__switcher">
+								<label>
+									<small class="checkbox-switcher__label">Move this wedding to "Editor Picks"</small>
+									<input type="checkbox" value="" />
+									<span>
+										<small></small>
+									</span>
+								</label>
+							</div>
+						</div>
+					</section>
+					<div class="table__buttons">
+						<button class="btn-grey">Save as draft</button>
+						<button class="btn table__btn">Publish</button>
+						<button class="btn-border">Preview</button>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div>
+	<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+	<script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.1.1/remodal.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"
+		integrity="sha512-NqYds8su6jivy1/WLoW8x1tZMRD7/1ZfhWG/jcRQLOzV1k1rIODCpMgoBnar5QXshKJGV7vi0LXLNXPoFsM5Zg=="
+		crossorigin="anonymous"></script>
+	<script src="./js/script.js"></script>
+</body>
 
-        </div>
-      </div>
-    </div>
-    <div class="remodal" data-remodal-id="confirm-modal">
-      <p class="remodal__question">
-        Are you sure that you want to archive this submittion?
-      </p>
-      <div class="remodal__buttons">
-        <button
-          data-remodal-action="confirm"
-          class="remodal-confirm btn-border"
-        >
-          yes
-        </button>
-        <button data-remodal-action="cancel" class="remodal-cancel btn">
-          no
-        </button>
-      </div>
-    </div>
-    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
-    <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
-    <script
-      src="https://code.jquery.com/jquery-3.6.0.min.js"
-      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-      crossorigin="anonymous"
-    ></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.1.1/remodal.min.js"></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"
-      integrity="sha512-NqYds8su6jivy1/WLoW8x1tZMRD7/1ZfhWG/jcRQLOzV1k1rIODCpMgoBnar5QXshKJGV7vi0LXLNXPoFsM5Zg=="
-      crossorigin="anonymous"
-    ></script>
-    <script src="./js/script.js"></script>
-  </body>
 </html>
