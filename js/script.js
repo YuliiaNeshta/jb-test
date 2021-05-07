@@ -128,3 +128,10 @@ if (document.querySelector('.vendor-type__link')) {
 $(document).ready(function() {
 	$('select').niceSelect();
 });
+
+Sortable.create(
+	simpleList,
+	{
+		/* options */
+	}
+);
