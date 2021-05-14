@@ -1,3 +1,57 @@
+//datepicker
+
+if ('.settings-blog__input-date') {
+	$('#datepicker-input').datepicker({
+		language: 'en',
+		autoClose: true
+	});
+}
+
+//static-calendar
+
+if ('.calendar') {
+	$('#datepicker-calendar').datepicker({
+		language: 'en',
+		autoClose: true,
+		inline: true
+	});
+}
+
+// var eventDates = [ 1, 10, 12, 22 ],
+// 	$picker = $('#custom-cells'),
+// 	$content = $('#custom-cells-events'),
+// 	sentences = [ 'one', 'two' ];
+
+// $picker.datepicker({
+// 	onRenderCell: function(date, cellType) {
+// 		var currentDate = date.getDate();
+
+// 		// Добавляем вспомогательный элемент, если число содержится в `eventDates`
+// 		if (cellType == 'day' && eventDates.indexOf(currentDate) != -1) {
+// 			return {
+// 				html: currentDate + '<span class="dp-note"></span>'
+// 			};
+// 		}
+// 	},
+// 	onSelect: function onSelect(fd, date) {
+// 		var title = '',
+// 			content = '';
+
+// 		// Если выбрана дата с событием, то отображаем его
+// 		if (date && eventDates.indexOf(date.getDate()) != -1) {
+// 			title = fd;
+// 			content = sentences[Math.floor(Math.random() * eventDates.length)];
+// 		}
+
+// 		$('strong', $content).html(title);
+// 		$('p', $content).html(content);
+// 	}
+// });
+
+// // Сразу выберем какую-ниудь дату из `eventDates`
+// var currentDate = (currentDate = new Date());
+// $picker.data('datepicker').selectDate(new Date(currentDate.getFullYear(), currentDate.getMonth(), 10));
+
 const accordion = (triggersSelector, itemsSelector) => {
 	var btns = document.querySelectorAll(triggersSelector);
 	var blocks = document.querySelectorAll(itemsSelector);
@@ -104,15 +158,19 @@ window.addEventListener('DOMContentLoaded', () => {
 	accordion('.sidebar__dropdown', '.sidebar__submenu');
 	accordion('.submission-table__row', '.wedding-edit');
 	accordion('.vendors-table__row', '.plan-edit');
-	// accordion('.submission-table__row', '.vendors-edit');
+	openedBlock('.media__edit-btn--popup', '.remodal-post-photo__edit');
+
 	openedBlock('.color__add-circle', '.color__change');
 	openedBlock('.homepage-row', '.edit-block');
 	openedBlock('.slider-row', '.edit-block');
 	openedBlock('.table__edit', '.plan-edit');
 	openedBlock('.reviews-table__row', '.reviews-edit');
 	openedBlock('.vendors-list__row', '.vendors-list__edit');
+	openedBlock('.table__row--post', '.edit-block');
+
 	//tabs
 	tabs('.remodal-edit__items', '.remodal-edit__item', '.remodal-edit__img', '.btn-next');
+	tabs('.remodal-edit__items--popup', '.remodal-edit__item--popup', '.remodal-edit__img--popup', '.btn-next--popup');
 });
 
 const template = document.getElementById('template');
@@ -125,13 +183,45 @@ if (document.querySelector('.vendor-type__link')) {
 	});
 }
 
+const templateTooltip = document.getElementById('templateTooltip');
+
+if (document.querySelector('.post-field__change-btn')) {
+	tippy('.post-field__change-btn', {
+		content: templateTooltip.innerHTML,
+		allowHTML: true,
+		interactive: true,
+		placement: 'right',
+		hideOnClick: false,
+		trigger: 'click'
+	});
+}
+
 $(document).ready(function() {
 	$('select').niceSelect();
 });
 
-Sortable.create(
-	simpleList,
-	{
-		/* options */
-	}
-);
+if ('#simpleList') {
+	Sortable.create(simpleList, {
+		handle: '.post-field__change-btn', // handle's class
+		animation: 150
+	});
+}
+
+const checkbox = document.querySelector('.checkbox-date');
+const rowDate = document.querySelector('.settings-blog__row--date');
+const textHidden = document.querySelector('.settings-blog__text--hidden');
+const rowMargin = document.querySelector('.settings-blog__row--margin');
+
+if ('.checkbox-date') {
+	checkbox.addEventListener('change', function() {
+		if (this.checked) {
+			rowDate.classList.add('active');
+			textHidden.style.display = 'none';
+			rowMargin.style.marginBottom = '0';
+		} else {
+			rowDate.classList.remove('active');
+			textHidden.style.display = 'block';
+			rowMargin.style.marginBottom = '0';
+		}
+	});
+}
