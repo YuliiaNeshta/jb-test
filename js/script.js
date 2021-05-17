@@ -1,6 +1,8 @@
 //datepicker
 
-if ('.settings-blog__input-date') {
+const calendar = document.querySelector('.settings-blog__input-date');
+
+if (calendar) {
 	$('#datepicker-input').datepicker({
 		language: 'en',
 		autoClose: true
@@ -9,48 +11,43 @@ if ('.settings-blog__input-date') {
 
 //static-calendar
 
-if ('.calendar') {
+const hugeCalendar = document.querySelector('.calendar');
+
+var eventDates = [ 1, 10, 12, 22 ],
+	$picker = $('#custom-cells'),
+	$content = $('#custom-cells-events'),
+	sentences = [ 'one', 'two' ];
+
+if (hugeCalendar) {
 	$('#datepicker-calendar').datepicker({
 		language: 'en',
 		autoClose: true,
-		inline: true
+		inline: true,
+		onRenderCell: function(date, cellType) {
+			var currentDate = date.getDate();
+
+			// Добавляем вспомогательный элемент, если число содержится в `eventDates`
+			if (cellType == 'day' && eventDates.indexOf(currentDate) != -1) {
+				return {
+					html: currentDate + '<span class="dp-note"></span>'
+				};
+			}
+		},
+		onSelect: function onSelect(fd, date) {
+			var title = '',
+				content = '';
+
+			// Если выбрана дата с событием, то отображаем его
+			if (date && eventDates.indexOf(date.getDate()) != -1) {
+				title = fd;
+				content = sentences[Math.floor(Math.random() * eventDates.length)];
+			}
+
+			$('strong', $content).html(title);
+			$('p', $content).html(content);
+		}
 	});
 }
-
-// var eventDates = [ 1, 10, 12, 22 ],
-// 	$picker = $('#custom-cells'),
-// 	$content = $('#custom-cells-events'),
-// 	sentences = [ 'one', 'two' ];
-
-// $picker.datepicker({
-// 	onRenderCell: function(date, cellType) {
-// 		var currentDate = date.getDate();
-
-// 		// Добавляем вспомогательный элемент, если число содержится в `eventDates`
-// 		if (cellType == 'day' && eventDates.indexOf(currentDate) != -1) {
-// 			return {
-// 				html: currentDate + '<span class="dp-note"></span>'
-// 			};
-// 		}
-// 	},
-// 	onSelect: function onSelect(fd, date) {
-// 		var title = '',
-// 			content = '';
-
-// 		// Если выбрана дата с событием, то отображаем его
-// 		if (date && eventDates.indexOf(date.getDate()) != -1) {
-// 			title = fd;
-// 			content = sentences[Math.floor(Math.random() * eventDates.length)];
-// 		}
-
-// 		$('strong', $content).html(title);
-// 		$('p', $content).html(content);
-// 	}
-// });
-
-// // Сразу выберем какую-ниудь дату из `eventDates`
-// var currentDate = (currentDate = new Date());
-// $picker.data('datepicker').selectDate(new Date(currentDate.getFullYear(), currentDate.getMonth(), 10));
 
 const accordion = (triggersSelector, itemsSelector) => {
 	var btns = document.querySelectorAll(triggersSelector);
@@ -97,61 +94,63 @@ const tabs = (headerSelector, tabSelector, contentSelector, btnNextTab, activeCl
 	const next = document.querySelector(btnNextTab);
 	const counter = document.querySelector('.remodal-edit__counter-item');
 
-	function hideTabContent() {
-		content.forEach((item) => {
-			item.style.display = 'none';
-		});
+	if (content && tab && content && next) {
+		function hideTabContent() {
+			content.forEach((item) => {
+				item.style.display = 'none';
+			});
 
-		tab.forEach((item) => {
-			item.classList.remove(activeClass);
-		});
-	}
-
-	function showTabContent(i = 0) {
-		content[i].style.display = 'block';
-		tab[i].classList.add(activeClass);
-		if (tab[i] === tab[3]) {
-			next.textContent = 'save';
-		}
-	}
-
-	hideTabContent();
-	showTabContent();
-
-	next.addEventListener('click', () => {
-		let clickItem = 'must';
-		tab.forEach((item, i) => {
-			if ('must' === clickItem || 'need' === clickItem) {
-				if ('need' === clickItem) {
-					item.click();
-					clickItem = 'done';
-				}
-
-				if (item.classList.contains(activeClass) && 'must' === clickItem) {
-					clickItem = 'need';
-				}
-			}
-		});
-	});
-
-	header.addEventListener('click', (e) => {
-		const target = e.target;
-
-		if (
-			target &&
-			(target.classList.contains(tabSelector.replace(/\./, '')) ||
-				target.parentNode.classList.contains(tabSelector.replace(/\./, '')))
-		) {
-			tab.forEach((item, i) => {
-				if (target == item || target.parentNode == item) {
-					hideTabContent();
-					showTabContent(i);
-					counter.textContent = i + 1;
-				}
-				console.log(i);
+			tab.forEach((item) => {
+				item.classList.remove(activeClass);
 			});
 		}
-	});
+
+		function showTabContent(i = 0) {
+			content[i].style.display = 'block';
+			tab[i].classList.add(activeClass);
+			if (tab[i] === tab[3]) {
+				next.textContent = 'save';
+			}
+		}
+
+		hideTabContent();
+		showTabContent();
+
+		next.addEventListener('click', () => {
+			let clickItem = 'must';
+			tab.forEach((item, i) => {
+				if ('must' === clickItem || 'need' === clickItem) {
+					if ('need' === clickItem) {
+						item.click();
+						clickItem = 'done';
+					}
+
+					if (item.classList.contains(activeClass) && 'must' === clickItem) {
+						clickItem = 'need';
+					}
+				}
+			});
+		});
+
+		header.addEventListener('click', (e) => {
+			const target = e.target;
+
+			if (
+				target &&
+				(target.classList.contains(tabSelector.replace(/\./, '')) ||
+					target.parentNode.classList.contains(tabSelector.replace(/\./, '')))
+			) {
+				tab.forEach((item, i) => {
+					if (target == item || target.parentNode == item) {
+						hideTabContent();
+						showTabContent(i);
+						counter.textContent = i + 1;
+					}
+					console.log(i);
+				});
+			}
+		});
+	}
 };
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -190,9 +189,9 @@ if (document.querySelector('.post-field__change-btn')) {
 		content: templateTooltip.innerHTML,
 		allowHTML: true,
 		interactive: true,
-		placement: 'right',
-		hideOnClick: false,
-		trigger: 'click'
+		placement: 'right'
+		// hideOnClick: false,
+		// trigger: 'click'
 	});
 }
 
@@ -200,7 +199,9 @@ $(document).ready(function() {
 	$('select').niceSelect();
 });
 
-if ('#simpleList') {
+var simpleListItem = document.querySelector('#simpleList');
+
+if (simpleListItem) {
 	Sortable.create(simpleList, {
 		handle: '.post-field__change-btn', // handle's class
 		animation: 150
@@ -212,7 +213,7 @@ const rowDate = document.querySelector('.settings-blog__row--date');
 const textHidden = document.querySelector('.settings-blog__text--hidden');
 const rowMargin = document.querySelector('.settings-blog__row--margin');
 
-if ('.checkbox-date') {
+if (checkbox) {
 	checkbox.addEventListener('change', function() {
 		if (this.checked) {
 			rowDate.classList.add('active');
@@ -223,5 +224,23 @@ if ('.checkbox-date') {
 			textHidden.style.display = 'block';
 			rowMargin.style.marginBottom = '0';
 		}
+	});
+}
+
+const favoriteBtns = document.querySelectorAll('.table__favorite');
+
+if (favoriteBtns) {
+	favoriteBtns.forEach((favorite) => {
+		favorite.addEventListener('click', () => {
+			favorite.classList.toggle('checked');
+		});
+	});
+}
+
+const editorItem = document.getElementById('#editor');
+
+if (editorItem) {
+	BalloonEditor.create(document.querySelector('#editor')).catch((error) => {
+		console.error(error);
 	});
 }

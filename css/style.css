@@ -61,6 +61,10 @@ img {
   max-width: 100%;
 }
 
+[contenteditable=true]:focus {
+  outline: 0px solid transparent;
+}
+
 .inner {
   width: 100%;
   background: #F5F5F5;
@@ -338,7 +342,7 @@ img {
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
   left: 0.1875rem;
-  top: 0.1463rem;
+  top: 0.1rem;
 }
 
 .checkbox-switcher__switcher label input:checked + span {
@@ -434,6 +438,11 @@ img {
 .datepicker--cell.-selected-,
 .datepicker--cell.-selected-.-current- {
   color: #fff;
+  background: #CB9274;
+}
+
+.remodal__buttons .remodal-cancel:focus,
+.remodal__buttons .remodal-cancel:hover {
   background: #CB9274;
 }
 
@@ -1733,13 +1742,35 @@ img {
   padding: 0rem;
 }
 
-.table__favorite:hover {
-  color: #333333;
+.table__favorite svg path {
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.table__favorite.checked {
+  color: #CB9274;
+}
+
+.table__favorite.checked svg {
+  fill: #CB9274;
+}
+
+.table__favorite.checked:hover {
+  color: #CB9274;
 }
 
 .table__favorite svg {
   width: 1.425rem;
   height: 1.225rem;
+}
+
+.table__favorite svg:hover {
+  fill: #CB9274;
+}
+
+.table__favorite svg:hover path {
+  color: #CB9274;
 }
 
 .table__edit {
@@ -3037,9 +3068,7 @@ img {
 }
 
 .-selected- .dp-note {
-  bottom: 2px;
-  background: #CB9274;
-  opacity: .5;
+  background: #fff;
 }
 
 .calendar .datepicker {
@@ -3189,6 +3218,16 @@ img {
   line-height: 140%;
   color: rgba(51, 51, 51, 0.8);
   opacity: 0.8;
+}
+
+.dp-note {
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: #CB9274;
+  border-radius: 50%;
+  position: absolute;
+  top: 0.625rem;
+  left: 0.625rem;
 }
 
 @media only screen and (min-width: 40.0625rem) {
