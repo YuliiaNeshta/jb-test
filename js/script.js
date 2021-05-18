@@ -157,6 +157,8 @@ window.addEventListener('DOMContentLoaded', () => {
 	accordion('.sidebar__dropdown', '.sidebar__submenu');
 	accordion('.submission-table__row', '.wedding-edit');
 	accordion('.vendors-table__row', '.plan-edit');
+	accordion('.colors-table__row', '.color-edit');
+	accordion('.line-table__row', '.edit-block');
 	openedBlock('.media__edit-btn--popup', '.remodal-post-photo__edit');
 
 	openedBlock('.color__add-circle', '.color__change');
