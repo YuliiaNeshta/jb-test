@@ -159,6 +159,9 @@ window.addEventListener('DOMContentLoaded', () => {
 	accordion('.vendors-table__row', '.plan-edit');
 	accordion('.colors-table__row', '.color-edit');
 	accordion('.line-table__row', '.edit-block');
+	accordion('.menu-table__row', '.edit-block');
+	accordion('.highlights-table__row', '.edit-block');
+
 	openedBlock('.media__edit-btn--popup', '.remodal-post-photo__edit');
 
 	openedBlock('.color__add-circle', '.color__change');
@@ -239,10 +242,32 @@ if (favoriteBtns) {
 	});
 }
 
-const editorItem = document.getElementById('#editor');
+// const editorItem = document.getElementById('#editor');
 
-if (editorItem) {
-	BalloonEditor.create(document.querySelector('#editor')).catch((error) => {
-		console.error(error);
-	});
+// BalloonEditor.create(document.querySelector('#editor')).catch((error) => {
+// 	console.error(error);
+// });
+
+const notificationIcon = document.querySelector('.notification-icon');
+
+if (notificationIcon) {
+	const openNotificationsInfo = () => {
+		let notificationIconSvg = document.querySelector('.notification-icon svg');
+		let notificationInfo = document.querySelector('.notification');
+
+		notificationIcon.addEventListener('click', () => {
+			notificationInfo.classList.toggle('active');
+		});
+
+		document.addEventListener('click', (e) => {
+			const target = e.target;
+			const infoBlock = target == notificationInfo || notificationInfo.contains(target);
+			const notificationIconTarget = target == notificationIcon || target == notificationIconSvg;
+
+			if (!infoBlock && !notificationIconTarget && notificationInfo.classList.contains('active')) {
+				notificationInfo.classList.remove('active');
+			}
+		});
+	};
+	openNotificationsInfo();
 }
