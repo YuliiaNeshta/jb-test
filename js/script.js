@@ -206,10 +206,22 @@ $(document).ready(function() {
 
 var simpleListItem = document.querySelector('#simpleList');
 
+var $sortable = null;
+
 if (simpleListItem) {
-	Sortable.create(simpleList, {
-		handle: '.post-field__change-btn', // handle's class
-		animation: 150
+	var fixHelper = function(e, ui) {
+		return '<div class="sortable-helper"></div>';
+	};
+
+	$sortable = $('#simpleList').sortable({
+		helper: fixHelper,
+		// helper: 'original',
+		axis: 'y',
+		handle: '.post-field__change-btn',
+		cursor: 'move',
+		revert: 100,
+		items: '.post-field__sort-item',
+		placeholder: 'placeh ui-state-highlight-blue'
 	});
 }
 
@@ -270,4 +282,55 @@ if (notificationIcon) {
 		});
 	};
 	openNotificationsInfo();
+}
+3;
+
+//baloon editor
+
+var textareaFields = document.querySelectorAll('.balloon');
+var text_changed = false;
+
+if (textareaFields.length > 0) {
+	textareaFields.forEach((textarea) => {
+		BalloonEditor.create(textarea, {
+			toolbar: {
+				items: [ 'bold', 'italic', '|', 'undo', 'redo', '|', 'link' ]
+			}
+		})
+			.then((editor) => {
+				window.CKEditor5 = editor;
+
+				detectTextChanges(editor);
+				detectFocusOut(editor);
+			})
+			.catch((error) => {
+				console.error(error);
+			});
+	});
+
+	function detectFocusOut(editor) {
+		editor.ui.focusTracker.on('change:isFocused', (evt, name, isFocused) => {
+			if (!isFocused && text_changed) {
+				text_changed = false;
+				updateEditor(editor);
+			}
+		});
+	}
+
+	function detectTextChanges(editor) {
+		editor.model.document.on('change:data', (e, i) => {
+			text_changed = true;
+			updateEditor(editor);
+		});
+	}
+
+	function updateEditor(editor) {
+		let element = $(editor.sourceElement);
+		if (element) {
+			let dataName = element.attr('data-name');
+			let thisTextarea = $('textarea[name="' + dataName + '"]');
+			thisTextarea.val(editor.getData());
+			thisTextarea.trigger('change');
+		}
+	}
 }
