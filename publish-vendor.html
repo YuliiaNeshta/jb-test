@@ -489,6 +489,158 @@
 								</div>
 							</div>
 							
+<div class="edit-block">
+    <div class="edit-block__row">
+        <div class="media">
+                <p class="media__label">
+                        Photo <span>(200kb max size)
+                    <button class="media__edit-btn" data-remodal-target="edit-photo-modal">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.5 11.2857L0.960449 10.7648L0.75 10.9827V11.2857H1.5ZM11.431 1L11.9706 0.479054C11.8293 0.332674 11.6345 0.25 11.431 0.25C11.2276 0.25 11.0328 0.332674 10.8915 0.479054L11.431 1ZM16.9483 6.71429L17.4878 7.23523C17.7684 6.94461 17.7684 6.48396 17.4878 6.19334L16.9483 6.71429ZM7.01724 17V17.75H7.33564L7.55679 17.5209L7.01724 17ZM1.5 17H0.75C0.75 17.4142 1.08579 17.75 1.5 17.75L1.5 17ZM2.03955 11.8067L11.9706 1.52095L10.8915 0.479054L0.960449 10.7648L2.03955 11.8067ZM10.8915 1.52095L16.4087 7.23523L17.4878 6.19334L11.9706 0.479054L10.8915 1.52095ZM16.4087 6.19334L6.47769 16.4791L7.55679 17.5209L17.4878 7.23523L16.4087 6.19334ZM7.01724 16.25H1.5V17.75H7.01724V16.25ZM2.25 17V11.2857H0.75V17H2.25ZM7.58114 4.94952L13.0984 10.6638L14.1775 9.62191L8.66024 3.90763L7.58114 4.94952ZM9.77586 17.75H17.5V16.25H9.77586V17.75Z" fill="currentColor"/>
+                        </svg>
+                    </button>
+                </span>
+                </p>
+                <div class="flex">
+                <div class="media__wrap">
+                    <div class="media__preview media__preview--edited" data-remodal-target="edit-photo-modal">
+                        <img src="./img/photo.png" alt="">
+                    </div>
+                    <button class="media__btn btn">upload</button>
+                    <button class="media__btn btn-grey">Delete</button>
+                </div>
+                </div>
+
+        </div>
+        <div class="color-wrapper">
+            <p class="color__label label">
+                Color
+            </p>
+            <div class="color">
+                <div class="color__wrap" style="background-color: #695439;">
+                </div>
+                <div class="color__wrap" style="background-color: #8F6252;">
+                </div>
+                <div class="color__wrap" style="background-color: #8B6B3B;">
+                </div>
+                <div class="color__wrap" style="background-color: #8B6B3B;">
+                </div>
+                <div class="color__wrap" style="background-color: #8B6B3B;">
+                </div>
+                <div class="color__wrap" style="background-color: #F3F3F2; border: 1px solid #BDBDBD;">
+                </div>
+                <div class="color__add">
+                    <div class="color__add-circle">
+                    </div>
+                    <span class="color__btn">add</span>
+                    <div class="color__change">
+                        <div class="color__change--wrap">
+                            <div class="color__new" style="background: #EB5757;">
+                            </div>
+                            <div class="color__new" style="background: #F2994A;">
+                            </div>
+                            <div class="color__new" style="background: #F2C94C;">
+                            </div>
+                            <div class="color__new" style="background: #56CCF2;">
+                            </div>
+                            <div class="color__new" style="background: #219653;">
+                            </div>
+                            <div class="color__new" style="background: #9B51E0;">
+                            </div>
+                            <div class="color__new" style="background: #42D691;">
+                            </div>
+                            <div class="color__new" style="background: #BDBDBD;">
+                            </div>
+                            <div class="color__new" style="background: #D44E4E;">
+                            </div>
+                            <div class="color__new" style="background: #DA8A43;">
+                            </div>
+                            <div class="color__new" style="background: #DAB544;">
+                            </div>
+                            <div class="color__new" style="background: #4DB8DA;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="media__input input">
+        <label class="input__label" for="meta">Heading <span>(up to 100 symbols)</span></label>
+        <input
+                class="input__field"
+                id="meta"
+                value="Absolutely in LOVE with Marina Valery's gown designs. Absolutely in LOVE with...."
+        />
+    </div>
+    <div class="textarea">
+        <label class="textarea__label label" for="textarea-meta">
+            Description<span> (up to 800 symbols)</span>
+        </label>
+        <textarea
+                class="textarea__field"
+                name=""
+                id="textarea-meta"
+        >From @gellerevents “It wasn’t the weekend in Mallorca we originally planned or the buyout in Big Sur or the backyard in Beverly Hills or the rental in Ojai or the estate in Palm Springs or the beach in Laguna but it WAS the perfect day in Montecito. After planning 7 versions of their wedding we had 7 days to make their big day come to life and it was nothing short of a dream.” -
+        </textarea>
+    </div>
+    <p class="label">Vendor Type</p>
+    <div class="vendor-type">
+        <select class="vendor-type__select select">
+            <option>Photographer</option>
+            <option>Florist</option>
+            <option>Videographer</option>
+            <option>Planner</option>
+            <option>Band</option>
+            <option>Stationery</option>
+            <option>DJ</option>
+        </select>
+        <div class="vendor-type__wrap">
+            <input
+                    class="vendor-type__input"
+                    value=""
+            />
+            <a href="#" class="vendor-type__link">
+                <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12.4609 6.78906C12.25 6.57812 12.0039 6.36719 11.7578 6.19141C11.5117 6.01562 11.2305 6.05078 11.0195 6.22656L10.2812 6.96484C10 7.28125 9.85938 7.66797 9.85938 8.01953C9.85938 8.23047 9.96484 8.37109 10.1055 8.47656C10.2109 8.54688 10.3516 8.65234 10.4922 8.75781C11.4766 9.77734 11.4766 11.3594 10.4922 12.3438L8.10156 14.6992C7.11719 15.7188 5.5 15.7188 4.51562 14.6992C3.53125 13.7148 3.56641 12.0977 4.55078 11.1133L5.00781 10.6562C5.18359 10.5156 5.21875 10.2695 5.14844 10.0586C4.9375 9.46094 4.83203 8.82812 4.79688 8.23047C4.79688 7.73828 4.19922 7.49219 3.84766 7.84375L2.54688 9.14453C0.472656 11.2188 0.472656 14.6289 2.54688 16.7031C4.62109 18.7773 8.03125 18.7773 10.1055 16.7031L12.4609 14.3477C12.4609 14.3477 12.4609 14.3477 12.4609 14.3125C14.5352 12.2734 14.5703 8.89844 12.4609 6.78906ZM17.418 1.83203C15.3438 -0.242188 11.9336 -0.242188 9.85938 1.83203L7.50391 4.1875C7.50391 4.1875 7.50391 4.1875 7.50391 4.22266C5.42969 6.26172 5.39453 9.63672 7.50391 11.7461C7.71484 11.957 7.96094 12.168 8.20703 12.3438C8.45312 12.5195 8.73438 12.4844 8.94531 12.3086L9.68359 11.5703C9.96484 11.2539 10.1055 10.8672 10.1055 10.5156C10.1055 10.3047 10 10.1641 9.85938 10.0586C9.75391 9.98828 9.61328 9.88281 9.47266 9.77734C8.48828 8.75781 8.48828 7.17578 9.47266 6.19141L11.8633 3.83594C12.8477 2.81641 14.4648 2.81641 15.4492 3.83594C16.4336 4.82031 16.3984 6.4375 15.4141 7.42188L14.957 7.87891C14.7812 8.01953 14.7461 8.26562 14.8164 8.47656C15.0273 9.07422 15.1328 9.70703 15.168 10.3047C15.168 10.7969 15.7656 11.043 16.1172 10.6914L17.418 9.39062C19.4922 7.31641 19.4922 3.90625 17.418 1.83203Z" fill="currentColor"/>
+                </svg>
+            </a>
+        </div>
+        <button class="vendor-type__check">Save</button>
+    </div>
+    <div class="vendor-type">
+        <select class="vendor-type__select select">
+            <option>Photographer</option>
+            <option>Florist</option>
+            <option>Videographer</option>
+            <option>Planner</option>
+            <option>Band</option>
+            <option>Stationery</option>
+            <option>DJ</option>
+        </select>
+        <div class="vendor-type__wrap">
+            <input
+                    class="vendor-type__input"
+                    value=""
+            />
+            <a href="#" class="vendor-type__link">
+                <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12.4609 6.78906C12.25 6.57812 12.0039 6.36719 11.7578 6.19141C11.5117 6.01562 11.2305 6.05078 11.0195 6.22656L10.2812 6.96484C10 7.28125 9.85938 7.66797 9.85938 8.01953C9.85938 8.23047 9.96484 8.37109 10.1055 8.47656C10.2109 8.54688 10.3516 8.65234 10.4922 8.75781C11.4766 9.77734 11.4766 11.3594 10.4922 12.3438L8.10156 14.6992C7.11719 15.7188 5.5 15.7188 4.51562 14.6992C3.53125 13.7148 3.56641 12.0977 4.55078 11.1133L5.00781 10.6562C5.18359 10.5156 5.21875 10.2695 5.14844 10.0586C4.9375 9.46094 4.83203 8.82812 4.79688 8.23047C4.79688 7.73828 4.19922 7.49219 3.84766 7.84375L2.54688 9.14453C0.472656 11.2188 0.472656 14.6289 2.54688 16.7031C4.62109 18.7773 8.03125 18.7773 10.1055 16.7031L12.4609 14.3477C12.4609 14.3477 12.4609 14.3477 12.4609 14.3125C14.5352 12.2734 14.5703 8.89844 12.4609 6.78906ZM17.418 1.83203C15.3438 -0.242188 11.9336 -0.242188 9.85938 1.83203L7.50391 4.1875C7.50391 4.1875 7.50391 4.1875 7.50391 4.22266C5.42969 6.26172 5.39453 9.63672 7.50391 11.7461C7.71484 11.957 7.96094 12.168 8.20703 12.3438C8.45312 12.5195 8.73438 12.4844 8.94531 12.3086L9.68359 11.5703C9.96484 11.2539 10.1055 10.8672 10.1055 10.5156C10.1055 10.3047 10 10.1641 9.85938 10.0586C9.75391 9.98828 9.61328 9.88281 9.47266 9.77734C8.48828 8.75781 8.48828 7.17578 9.47266 6.19141L11.8633 3.83594C12.8477 2.81641 14.4648 2.81641 15.4492 3.83594C16.4336 4.82031 16.3984 6.4375 15.4141 7.42188L14.957 7.87891C14.7812 8.01953 14.7461 8.26562 14.8164 8.47656C15.0273 9.07422 15.1328 9.70703 15.168 10.3047C15.168 10.7969 15.7656 11.043 16.1172 10.6914L17.418 9.39062C19.4922 7.31641 19.4922 3.90625 17.418 1.83203Z" fill="currentColor"/>
+                </svg>
+            </a>
+        </div>
+        <button class="vendor-type__add">add</button>
+
+    </div>
+
+    <div class="edit-block__buttons">
+        <button class="btn">Save</button>
+    </div>
+    <div id="template" style="display: none;">
+        <input class="link-tippy" placeholder="Type or paste URL"></input>
+    </div>
+</div>
 						</div>
 						<button class="table__add">
 							<svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -503,15 +655,15 @@
 						<h2 class="italic-title">Membership info</h2>
 						<div class="category category--grid">
 							<label class="category__btn">
-								<input type="radio" checked name="membership" />
+								<input type="radio" name="membership" value="Elevated" />
 								<span>Elevated</span>
 							</label>
-							<label class="category__btn" name="membership">
-								<input type="radio" />
+							<label class="category__btn">
+								<input type="radio" name="membership" value="Premium" />
 								<span>Premium</span>
 							</label>
-							<label class="category__btn" name="membership">
-								<input type="radio" />
+							<label class="category__btn">
+								<input type="radio" name="membership" value="Elite" />
 								<span>Elite</span>
 							</label>
 						</div>
@@ -523,7 +675,163 @@
 						<button class="btn-border">Preview</button>
 					</div>
 				</section>
+				<div class="gallery-edit-block">
+	<div class="gallery-edit-block__type">
+		<div class="category gallery-edit-block__category">
+			<label class="category__btn">
+				<input type="radio" name="membership" value="photo" />
+				<span>Photo</span>
+			</label>
+			<label class="category__btn">
+				<input type="radio" name="membership" value="video" />
+				<span>Video</span>
+			</label>
+		</div>
+	</div>
+	<div class="edit-block__row">
+		<div class="media">
+			<p class="media__label">
+				Photo <span>
+					<button class="media__edit-btn" data-remodal-target="edit-photo-modal">
+						<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M1.5 11.2857L0.960449 10.7648L0.75 10.9827V11.2857H1.5ZM11.431 1L11.9706 0.479054C11.8293 0.332674 11.6345 0.25 11.431 0.25C11.2276 0.25 11.0328 0.332674 10.8915 0.479054L11.431 1ZM16.9483 6.71429L17.4878 7.23523C17.7684 6.94461 17.7684 6.48396 17.4878 6.19334L16.9483 6.71429ZM7.01724 17V17.75H7.33564L7.55679 17.5209L7.01724 17ZM1.5 17H0.75C0.75 17.4142 1.08579 17.75 1.5 17.75L1.5 17ZM2.03955 11.8067L11.9706 1.52095L10.8915 0.479054L0.960449 10.7648L2.03955 11.8067ZM10.8915 1.52095L16.4087 7.23523L17.4878 6.19334L11.9706 0.479054L10.8915 1.52095ZM16.4087 6.19334L6.47769 16.4791L7.55679 17.5209L17.4878 7.23523L16.4087 6.19334ZM7.01724 16.25H1.5V17.75H7.01724V16.25ZM2.25 17V11.2857H0.75V17H2.25ZM7.58114 4.94952L13.0984 10.6638L14.1775 9.62191L8.66024 3.90763L7.58114 4.94952ZM9.77586 17.75H17.5V16.25H9.77586V17.75Z"
+								fill="currentColor" />
+						</svg>
+					</button>
+				</span>
+			</p>
+			<div class="flex">
+				<div class="media__wrap">
+					<div class="media__preview media__preview--edited" data-remodal-target="edit-photo-modal">
+						<img src="./img/photo.png" alt="">
+					</div>
+					<button class="media__btn btn">upload</button>
+					<button class="media__btn btn-grey">Delete</button>
+				</div>
+			</div>
 
+		</div>
+		<div class="color-wrapper">
+			<p class="color__label label">
+				Color
+			</p>
+			<div class="color">
+				<div class="color__wrap" style="background-color: #695439;">
+				</div>
+				<div class="color__wrap" style="background-color: #8F6252;">
+				</div>
+				<div class="color__wrap" style="background-color: #8B6B3B;">
+				</div>
+				<div class="color__wrap" style="background-color: #8B6B3B;">
+				</div>
+				<div class="color__wrap" style="background-color: #8B6B3B;">
+				</div>
+				<div class="color__wrap" style="background-color: #F3F3F2; border: 1px solid #BDBDBD;">
+				</div>
+				<div class="color__add">
+					<div class="color__add-circle">
+					</div>
+					<span class="color__btn">add</span>
+					<div class="color__change">
+						<div class="color__change--wrap">
+							<div class="color__new" style="background: #EB5757;">
+							</div>
+							<div class="color__new" style="background: #F2994A;">
+							</div>
+							<div class="color__new" style="background: #F2C94C;">
+							</div>
+							<div class="color__new" style="background: #56CCF2;">
+							</div>
+							<div class="color__new" style="background: #219653;">
+							</div>
+							<div class="color__new" style="background: #9B51E0;">
+							</div>
+							<div class="color__new" style="background: #42D691;">
+							</div>
+							<div class="color__new" style="background: #BDBDBD;">
+							</div>
+							<div class="color__new" style="background: #D44E4E;">
+							</div>
+							<div class="color__new" style="background: #DA8A43;">
+							</div>
+							<div class="color__new" style="background: #DAB544;">
+							</div>
+							<div class="color__new" style="background: #4DB8DA;">
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<div class="media__input input">
+		<label class="input__label" for="meta">Heading <span>(up to 100 symbols)</span></label>
+		<input class="input__field" id="meta"
+			value="Absolutely in LOVE with Marina Valery's gown designs. Absolutely in LOVE with...." />
+	</div>
+	<div class="textarea">
+		<label class="textarea__label label" for="textarea-meta">
+			Description<span> (up to 800 symbols)</span>
+		</label>
+		<textarea class="textarea__field" name="" id="textarea-meta">From @gellerevents “It wasn’t the weekend in Mallorca we originally planned or the buyout in Big Sur or the backyard in Beverly Hills or the rental in Ojai or the estate in Palm Springs or the beach in Laguna but it WAS the perfect day in Montecito. After planning 7 versions of their wedding we had 7 days to make their big day come to life and it was nothing short of a dream.” -
+			</textarea>
+	</div>
+	<p class="label">Vendor Type</p>
+	<div class="vendor-type">
+		<select class="vendor-type__select select">
+			<option>Photographer</option>
+			<option>Florist</option>
+			<option>Videographer</option>
+			<option>Planner</option>
+			<option>Band</option>
+			<option>Stationery</option>
+			<option>DJ</option>
+		</select>
+		<div class="vendor-type__wrap">
+			<input class="vendor-type__input" value="" />
+			<a href="#" class="vendor-type__link">
+				<svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M12.4609 6.78906C12.25 6.57812 12.0039 6.36719 11.7578 6.19141C11.5117 6.01562 11.2305 6.05078 11.0195 6.22656L10.2812 6.96484C10 7.28125 9.85938 7.66797 9.85938 8.01953C9.85938 8.23047 9.96484 8.37109 10.1055 8.47656C10.2109 8.54688 10.3516 8.65234 10.4922 8.75781C11.4766 9.77734 11.4766 11.3594 10.4922 12.3438L8.10156 14.6992C7.11719 15.7188 5.5 15.7188 4.51562 14.6992C3.53125 13.7148 3.56641 12.0977 4.55078 11.1133L5.00781 10.6562C5.18359 10.5156 5.21875 10.2695 5.14844 10.0586C4.9375 9.46094 4.83203 8.82812 4.79688 8.23047C4.79688 7.73828 4.19922 7.49219 3.84766 7.84375L2.54688 9.14453C0.472656 11.2188 0.472656 14.6289 2.54688 16.7031C4.62109 18.7773 8.03125 18.7773 10.1055 16.7031L12.4609 14.3477C12.4609 14.3477 12.4609 14.3477 12.4609 14.3125C14.5352 12.2734 14.5703 8.89844 12.4609 6.78906ZM17.418 1.83203C15.3438 -0.242188 11.9336 -0.242188 9.85938 1.83203L7.50391 4.1875C7.50391 4.1875 7.50391 4.1875 7.50391 4.22266C5.42969 6.26172 5.39453 9.63672 7.50391 11.7461C7.71484 11.957 7.96094 12.168 8.20703 12.3438C8.45312 12.5195 8.73438 12.4844 8.94531 12.3086L9.68359 11.5703C9.96484 11.2539 10.1055 10.8672 10.1055 10.5156C10.1055 10.3047 10 10.1641 9.85938 10.0586C9.75391 9.98828 9.61328 9.88281 9.47266 9.77734C8.48828 8.75781 8.48828 7.17578 9.47266 6.19141L11.8633 3.83594C12.8477 2.81641 14.4648 2.81641 15.4492 3.83594C16.4336 4.82031 16.3984 6.4375 15.4141 7.42188L14.957 7.87891C14.7812 8.01953 14.7461 8.26562 14.8164 8.47656C15.0273 9.07422 15.1328 9.70703 15.168 10.3047C15.168 10.7969 15.7656 11.043 16.1172 10.6914L17.418 9.39062C19.4922 7.31641 19.4922 3.90625 17.418 1.83203Z"
+						fill="currentColor" />
+				</svg>
+			</a>
+		</div>
+		<button class="vendor-type__check">Save</button>
+	</div>
+	<div class="vendor-type">
+		<select class="vendor-type__select select">
+			<option>Photographer</option>
+			<option>Florist</option>
+			<option>Videographer</option>
+			<option>Planner</option>
+			<option>Band</option>
+			<option>Stationery</option>
+			<option>DJ</option>
+		</select>
+		<div class="vendor-type__wrap">
+			<input class="vendor-type__input" value="" />
+			<a href="#" class="vendor-type__link">
+				<svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M12.4609 6.78906C12.25 6.57812 12.0039 6.36719 11.7578 6.19141C11.5117 6.01562 11.2305 6.05078 11.0195 6.22656L10.2812 6.96484C10 7.28125 9.85938 7.66797 9.85938 8.01953C9.85938 8.23047 9.96484 8.37109 10.1055 8.47656C10.2109 8.54688 10.3516 8.65234 10.4922 8.75781C11.4766 9.77734 11.4766 11.3594 10.4922 12.3438L8.10156 14.6992C7.11719 15.7188 5.5 15.7188 4.51562 14.6992C3.53125 13.7148 3.56641 12.0977 4.55078 11.1133L5.00781 10.6562C5.18359 10.5156 5.21875 10.2695 5.14844 10.0586C4.9375 9.46094 4.83203 8.82812 4.79688 8.23047C4.79688 7.73828 4.19922 7.49219 3.84766 7.84375L2.54688 9.14453C0.472656 11.2188 0.472656 14.6289 2.54688 16.7031C4.62109 18.7773 8.03125 18.7773 10.1055 16.7031L12.4609 14.3477C12.4609 14.3477 12.4609 14.3477 12.4609 14.3125C14.5352 12.2734 14.5703 8.89844 12.4609 6.78906ZM17.418 1.83203C15.3438 -0.242188 11.9336 -0.242188 9.85938 1.83203L7.50391 4.1875C7.50391 4.1875 7.50391 4.1875 7.50391 4.22266C5.42969 6.26172 5.39453 9.63672 7.50391 11.7461C7.71484 11.957 7.96094 12.168 8.20703 12.3438C8.45312 12.5195 8.73438 12.4844 8.94531 12.3086L9.68359 11.5703C9.96484 11.2539 10.1055 10.8672 10.1055 10.5156C10.1055 10.3047 10 10.1641 9.85938 10.0586C9.75391 9.98828 9.61328 9.88281 9.47266 9.77734C8.48828 8.75781 8.48828 7.17578 9.47266 6.19141L11.8633 3.83594C12.8477 2.81641 14.4648 2.81641 15.4492 3.83594C16.4336 4.82031 16.3984 6.4375 15.4141 7.42188L14.957 7.87891C14.7812 8.01953 14.7461 8.26562 14.8164 8.47656C15.0273 9.07422 15.1328 9.70703 15.168 10.3047C15.168 10.7969 15.7656 11.043 16.1172 10.6914L17.418 9.39062C19.4922 7.31641 19.4922 3.90625 17.418 1.83203Z"
+						fill="currentColor" />
+				</svg>
+			</a>
+		</div>
+		<button class="vendor-type__add">add</button>
+
+	</div>
+
+	<div class="edit-block__buttons">
+		<button class="btn">Save</button>
+	</div>
+	<div id="template" style="display: none;">
+		<input class="link-tippy" placeholder="Type or paste URL"></input>
+	</div>
+</div>
 			</div>
 		</div>
 	</div>
