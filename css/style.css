@@ -177,7 +177,7 @@ img {
   background-color: #000;
   position: absolute;
   left: -7.5rem;
-  top: 1.875rem;
+  top: 2rem;
 }
 
 .text {
@@ -793,6 +793,7 @@ img {
 }
 
 .media__edit-btn {
+  display: inline-block;
   color: #c7c7c7;
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
@@ -875,11 +876,11 @@ img {
 
 .media__preview--edited::after {
   content: "";
-  width: 10px;
-  height: 10px;
+  width: 0.625rem;
+  height: 0.625rem;
   border-radius: 50%;
   position: absolute;
-  left: -18px;
+  left: -1.125rem;
   top: 0;
   background-color: #CB9274;
 }
@@ -1005,6 +1006,13 @@ img {
   color: #c7c7c7;
 }
 
+.input__field--date {
+  background-image: url(../img/date.svg);
+  background-position: right 1.875rem center;
+  background-size: 1.25rem;
+  background-repeat: no-repeat;
+}
+
 .textarea__label {
   margin-bottom: 1.25rem;
 }
@@ -1020,6 +1028,9 @@ img {
   line-height: 140%;
   color: #333333;
   resize: none;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
 }
 
 .textarea__field:focus {
@@ -1106,7 +1117,7 @@ img {
 
 .header {
   position: absolute;
-  top: 3rem;
+  top: 3.725rem;
   right: 4.3125rem;
   text-align: end;
   max-width: 76.8rem;
@@ -1412,7 +1423,7 @@ img {
 .vendor-type__link {
   position: absolute;
   right: 1.25rem;
-  top: 2.25rem;
+  top: 2rem;
   color: #e0e0e0;
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
@@ -1549,11 +1560,11 @@ img {
 }
 
 .vendor-type__add:hover {
-  color: #ba866a;
+  color: rgba(203, 146, 116, 0.7);
 }
 
 .vendor-type__add:hover::before {
-  background-color: #ba866a;
+  background-color: rgba(203, 146, 116, 0.7);
 }
 
 .vendor-type__add::before {
@@ -1562,9 +1573,9 @@ img {
   height: 5.5625rem;
   width: 5.5625rem;
   cursor: pointer;
-  -webkit-transition: all 0.3s ease 0.3s;
-  -o-transition: all 0.3s ease 0.3s;
-  transition: all 0.3s ease 0.3s;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
   background-image: url(../img/add-big-icon.svg);
   background-repeat: no-repeat;
   background-position: center center;
@@ -1800,7 +1811,7 @@ img {
   letter-spacing: 0.215em;
   text-transform: uppercase;
   color: #333333;
-  height: 5.5625rem;
+  height: 5rem;
   padding: 1.25rem 2.5rem;
   margin-right: 1.25rem;
   border: 1.5px solid #E0E0E0;
@@ -1810,6 +1821,33 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  position: relative;
+}
+
+.types__btn::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background-color: #F5F5F5;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.types__btn:hover::before {
+  opacity: 1;
+  cursor: pointer;
+  background-color: #F5F5F5;
+  background-image: url(../img/delete-tag.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 .table {
@@ -1924,6 +1962,7 @@ img {
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
+  position: relative;
 }
 
 .table__add svg {
@@ -3354,11 +3393,11 @@ img {
   font-size: 1.5rem;
   line-height: 100%;
   color: #333333;
-  margin-bottom: 3.125rem;
+  margin-bottom: 2.5rem;
 }
 
 .detail-section__textarea {
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.6875rem;
 }
 
 .detail-section__resources {
@@ -3407,6 +3446,7 @@ img {
   font-size: 1.125rem;
   line-height: 140%;
   color: #6F6F6F;
+  max-width: 25.3125rem;
 }
 
 .checkbox-date:checked + .settings-blog__text--hidden {
@@ -3429,6 +3469,10 @@ img {
   position: relative;
 }
 
+.post-field [data-tippy-root] {
+  margin-left: 0.625rem !important;
+}
+
 .post-field .tippy-content {
   padding: 0.625rem 0.9375rem 0.5rem 0.9375rem;
   height: 3.125rem;
@@ -3444,14 +3488,66 @@ img {
   margin-right: 1.875rem;
 }
 
+.post-field .media__label {
+  display: inline-block;
+}
+
 .post-field__wrap {
   position: relative;
 }
 
 .post-field__add-absolute {
+  height: 45px;
+  width: 45px;
+  cursor: pointer;
+}
+
+.post-field__add-buttons {
+  position: relative;
+}
+
+.post-field__add-tooltip-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   position: absolute;
-  bottom: 70px;
-  left: -65px;
+  top: 0;
+  left: -7.0625rem;
+  z-index: 4;
+}
+
+.post-field__add-tooltip--sticky {
+  background-color: #333;
+  padding: 0.625rem;
+  height: 45px;
+  display: none;
+  padding: 0.625rem;
+}
+
+.post-field__add-tooltip--sticky .template-text__btn + .template-text__btn {
+  margin: 0px;
+}
+
+.post-field__add-tooltip {
+  background-color: #333;
+  padding: 0.625rem;
+  height: 45px;
+  display: none;
+  padding: 0.625rem;
+  height: 45px;
+  width: auto;
+  visibility: visible;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  opacity: 1;
+}
+
+.post-field__add-tooltip .template-text__btn + .template-text__btn {
+  margin: 0px;
 }
 
 .post-field__heading {
@@ -3479,6 +3575,7 @@ img {
   border-top: 0.0625rem solid #e0e0e0;
   position: relative;
   margin-bottom: 3.125rem;
+  margin-top: 5rem;
 }
 
 .post-field__text {
@@ -3506,14 +3603,14 @@ img {
 
 .post-field__change-btn {
   position: absolute;
-  top: 0px;
+  top: 0rem;
   left: -6.2rem;
   color: #C7C7C7;
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
-  line-height: 0px;
-  padding-left: 23px;
+  line-height: 0rem;
+  padding-left: 1.4375rem;
 }
 
 .post-field__change-btn:hover {
@@ -3524,29 +3621,9 @@ img {
   background-size: 0.4375rem 0.9375rem;
 }
 
-.post-field__change-btn--heading svg {
-  width: 1.1875rem;
-  height: 1.3125rem;
-}
-
-.post-field__change-btn--heading-2 svg {
-  width: 1.5rem;
-  height: 1.8125rem;
-}
-
-.post-field__change-btn--heading-3 svg {
-  width: 1.5rem;
-  height: 1.8125rem;
-}
-
-.post-field__change-btn--img svg {
-  width: 1.325rem;
-  height: 1.325rem;
-}
-
-.post-field__change-btn--text svg {
-  width: 1rem;
-  height: 1rem;
+.post-field__change-btn svg {
+  width: 30px;
+  height: 30px;
 }
 
 .post-field__delete {
@@ -3558,6 +3635,7 @@ img {
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
   line-height: 0px;
+  cursor: pointer;
 }
 
 .post-field__delete:hover {
@@ -3625,10 +3703,14 @@ img {
   margin-right: 10px;
 }
 
+.post-field__add--svg {
+  margin-right: 0px !important;
+}
+
 .post-field__heading-2 {
   font-family: "Saol";
   font-style: italic;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 2.25rem;
   line-height: 130%;
   text-transform: capitalize;

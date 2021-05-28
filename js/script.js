@@ -334,3 +334,21 @@ if (textareaFields.length > 0) {
 		}
 	}
 }
+
+const addPostBtn = document.querySelector('.post-field-add');
+const postTypesBlock = document.querySelector('.post-field__add-tooltip');
+
+if (addPostBtn) {
+	$('.post-field-add').click(function() {
+		$('.post-field__add-tooltip').toggle('slow', function() {});
+	});
+}
+
+$('.post-field__add-absolute').click(function() {
+	$('.post-field__add-tooltip--sticky').toggle('slide');
+	$('.post-field__add--svg');
+});
+
+// $(function() {
+// 	$('.settings-blog__input-time').timepicker();
+// });
