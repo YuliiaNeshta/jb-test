@@ -9,6 +9,16 @@ if (calendar) {
 	});
 }
 
+if (calendar) {
+	$('.settings-blog__input-time').datepicker({
+		language: 'en',
+		// autoClose: true,
+		timepicker: true,
+		onlyTimepicker: true,
+		inline: false
+	});
+}
+
 //static-calendar
 
 const hugeCalendar = document.querySelector('.calendar');
@@ -163,6 +173,7 @@ window.addEventListener('DOMContentLoaded', () => {
 	accordion('.highlights-table__row', '.edit-block');
 
 	openedBlock('.media__edit-btn--popup', '.remodal-post-photo__edit');
+	openedBlock('.media__preview--popup', '.remodal-post-photo__edit');
 
 	openedBlock('.color__add-circle', '.color__change');
 	openedBlock('.homepage-row', '.edit-block');
@@ -194,7 +205,8 @@ if (document.querySelector('.post-field__change-btn')) {
 		content: templateTooltip.innerHTML,
 		allowHTML: true,
 		interactive: true,
-		placement: 'right'
+		placement: 'right',
+		interactiveBorder: 50
 		// hideOnClick: false,
 		// trigger: 'click'
 	});
@@ -351,4 +363,9 @@ $('.post-field__add-absolute').click(function() {
 
 // $(function() {
 // 	$('.settings-blog__input-time').timepicker();
+// });
+
+// jQuery('.settings-blog__input-time').datetimepicker({
+// 	datepicker: false,
+// 	allowTimes: [ '12:00', '13:00', '15:00', '17:00', '17:05', '17:20', '19:00', '20:00' ]
 // });
