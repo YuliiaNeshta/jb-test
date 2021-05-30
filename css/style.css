@@ -507,6 +507,12 @@ img {
           box-sizing: border-box;
 }
 
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: none !important;
+  background: #CB9274 !important;
+}
+
 .sidebar {
   width: 22.5rem;
   padding: 3.625rem 3.75rem;
