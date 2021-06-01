@@ -171,6 +171,8 @@ window.addEventListener('DOMContentLoaded', () => {
 	accordion('.line-table__row', '.edit-block');
 	accordion('.menu-table__row', '.edit-block');
 	accordion('.highlights-table__row', '.edit-block');
+	accordion('.gallery-table__row', '.gallery-edit-block');
+	accordion('.social-table__row', '.social-edit-block');
 
 	openedBlock('.media__edit-btn--popup', '.remodal-post-photo__edit');
 	openedBlock('.media__preview--popup', '.remodal-post-photo__edit');
@@ -186,6 +188,7 @@ window.addEventListener('DOMContentLoaded', () => {
 	//tabs
 	tabs('.remodal-edit__items', '.remodal-edit__item', '.remodal-edit__img', '.btn-next');
 	tabs('.remodal-edit__items--popup', '.remodal-edit__item--popup', '.remodal-edit__img--popup', '.btn-next--popup');
+	tabs('.gallery-edit-block__type', '.category__btn', '.gallery-edit-block__tab');
 });
 
 const template = document.getElementById('template');
@@ -361,11 +364,42 @@ $('.post-field__add-absolute').click(function() {
 	$('.post-field__add--svg');
 });
 
-// $(function() {
-// 	$('.settings-blog__input-time').timepicker();
-// });
+const categoryBlock = document.querySelector('.category--blog');
 
-// jQuery('.settings-blog__input-time').datetimepicker({
-// 	datepicker: false,
-// 	allowTimes: [ '12:00', '13:00', '15:00', '17:00', '17:05', '17:20', '19:00', '20:00' ]
-// });
+if (categoryBlock) {
+	var $bl = $('.blog-posts__category'),
+		$th = $('.category--blog'),
+		blW = $bl.outerWidth(),
+		blSW = $bl[0].scrollWidth,
+		wDiff = blSW / blW - 1, // widths difference ratio
+		mPadd = 60, // Mousemove Padding
+		damp = 20, // Mousemove response softness
+		mX = 0, // Real mouse position
+		mX2 = 0, // Modified mouse position
+		posX = 0,
+		mmAA = blW - mPadd * 2, // The mousemove available area
+		mmAAr = blW / mmAA; // get available mousemove fidderence ratio
+
+	$bl.mousemove(function(e) {
+		mX = e.pageX - this.offsetLeft;
+		mX2 = Math.min(Math.max(0, mX - mPadd), mmAA) * mmAAr;
+	});
+
+	setInterval(function() {
+		posX += (mX2 - posX) / damp; // zeno's paradox equation "catching delay"
+		$th.css({ marginLeft: -posX * wDiff });
+	}, 10);
+}
+
+$('.gallery-edit-block').each(function() {
+	let ths = $(this);
+	ths.find('.gallery-edit-block__tab').not(':first').hide();
+	ths
+		.find('.category__btn')
+		.click(function() {
+			ths.find('.category__btn').removeClass('active').eq($(this).index()).addClass('active');
+			ths.find('.gallery-edit-block__tab').hide().eq($(this).index()).fadeIn();
+		})
+		.eq(0)
+		.addClass('active');
+});
