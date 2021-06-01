@@ -2193,6 +2193,14 @@ input[type=range]::-webkit-slider-thumb {
   color: #CB9274;
 }
 
+.table__favorite.checked:hover svg {
+  fill: #CB9274;
+}
+
+.table__favorite.checked:hover path {
+  color: #CB9274;
+}
+
 .table__favorite svg {
   width: 1.425rem;
   height: 1.225rem;
