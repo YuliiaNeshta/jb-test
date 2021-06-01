@@ -269,6 +269,16 @@ if (favoriteBtns) {
 	});
 }
 
+const checkBtnsTable = document.querySelectorAll('.table__check');
+
+if (checkBtnsTable) {
+	checkBtnsTable.forEach((checkBtn) => {
+		checkBtn.addEventListener('click', () => {
+			checkBtn.classList.toggle('checked');
+		});
+	});
+}
+
 // const editorItem = document.getElementById('#editor');
 
 // BalloonEditor.create(document.querySelector('#editor')).catch((error) => {

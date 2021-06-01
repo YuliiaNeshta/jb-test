@@ -359,7 +359,7 @@ img {
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
   left: 0.1875rem;
-  top: 0.1rem;
+  top: 0.13rem;
 }
 
 .checkbox-switcher__switcher label input:checked + span {
@@ -2134,6 +2134,18 @@ input[type=range]::-webkit-slider-thumb {
   padding: 0rem;
 }
 
+.table__check.checked {
+  color: #CB9274;
+}
+
+.table__check.checked svg {
+  fill: #CB9274;
+}
+
+.table__check.checked:hover {
+  color: #CB9274;
+}
+
 .table__check:hover {
   color: #333333;
 }
@@ -2187,11 +2199,11 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 .table__favorite svg:hover {
-  fill: #CB9274;
+  fill: transparent;
 }
 
 .table__favorite svg:hover path {
-  color: #CB9274;
+  color: #333;
 }
 
 .table__edit {
@@ -3985,8 +3997,6 @@ input[type=range]::-webkit-slider-thumb {
 
 .blog-posts__category {
   position: relative;
-  overflow: hidden;
-  margin: 0 5px;
   height: 142px;
   max-width: 72.4375rem;
 }
@@ -4336,8 +4346,8 @@ input[type=range]::-webkit-slider-thumb {
 .round-checkbox > span::after {
   content: "";
   position: absolute;
-  top: 0.23rem;
-  left: 0.23rem;
+  top: 0.09rem;
+  left: 0.25rem;
   width: 0.625rem;
   height: 0.625rem;
   background: #CB9274;
