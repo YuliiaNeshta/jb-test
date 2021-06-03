@@ -374,7 +374,7 @@ $('.post-field__add-absolute').click(function() {
 	$('.post-field__add--svg');
 });
 
-const categoryBlock = document.querySelector('.category--blog');
+const categoryBlock = document.querySelector('.blog-posts__category .category--blog');
 
 if (categoryBlock) {
 	var $bl = $('.blog-posts__category'),
