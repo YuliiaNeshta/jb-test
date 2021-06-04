@@ -339,12 +339,11 @@ img {
   width: 2.5625rem;
   height: 1.375rem;
   background: #FFFFFF;
-  border: 1px solid #E0E0E0;
+  border: 0.0625rem solid #E0E0E0;
   border-radius: 0.75rem;
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  padding: 0.125rem;
   cursor: pointer;
 }
 
@@ -358,8 +357,8 @@ img {
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  left: 0.1875rem;
-  top: 0.13rem;
+  left: 3px;
+  top: 0.125rem;
 }
 
 .checkbox-switcher__switcher label input:checked + span {
@@ -371,7 +370,10 @@ img {
 }
 
 .checkbox-switcher__switcher label input:checked + span small {
-  left: 52%;
+  left: calc(100% - 3px);
+  -webkit-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
+          transform: translateX(-100%);
   background: #FFFFFF;
 }
 
@@ -1096,6 +1098,11 @@ input[type=range]::-webkit-slider-thumb {
   margin-bottom: 2.375rem;
 }
 
+.checkbox {
+  width: 1.375rem;
+  height: 1.375rem;
+}
+
 .checkbox > .checkbox__input {
   position: absolute;
   z-index: -1;
@@ -1107,8 +1114,15 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 .checkbox > span {
-  position: relative;
-  padding: 0 0 0 3.125rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   cursor: pointer;
 }
 
@@ -1129,8 +1143,8 @@ input[type=range]::-webkit-slider-thumb {
 .checkbox > span::after {
   content: "";
   position: absolute;
-  top: 0.16rem;
-  left: 0.25rem;
+  top: 50%;
+  left: 50%;
   width: 0.875rem;
   height: 0.875rem;
   background: #CB9274;
@@ -1138,6 +1152,9 @@ input[type=range]::-webkit-slider-thumb {
   -webkit-transition: 0.2s;
   -o-transition: 0.2s;
   transition: 0.2s;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .header {
