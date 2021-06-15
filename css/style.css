@@ -4596,7 +4596,7 @@ input[type=range]::-webkit-slider-thumb {
 .login-form__input {
   background: #FFFFFF;
   border: 0.0625rem solid #E0E0E0;
-  padding: 2.0625rem 2.0625rem 2.0625rem 3.375rem;
+  padding: 2rem 2.0625rem 1.9rem 54px;
   margin-bottom: 1.875rem;
   background-repeat: no-repeat;
   background-position: left 1.5rem center;
