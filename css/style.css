@@ -4539,9 +4539,6 @@ input[type=range]::-webkit-slider-thumb {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -4550,6 +4547,7 @@ input[type=range]::-webkit-slider-thumb {
       -ms-flex: 1 0 auto;
           flex: 1 0 auto;
   margin-bottom: 1.25rem;
+  margin-top: 12vh;
 }
 
 .login__logo {
@@ -4602,10 +4600,17 @@ input[type=range]::-webkit-slider-thumb {
   margin-bottom: 1.875rem;
   background-repeat: no-repeat;
   background-position: left 1.5rem center;
-  background-size: 1.0625rem 1.0625rem;
+  background-size: 1.5rem 1.5rem;
   font-size: 1.125rem;
   line-height: 1.3125rem;
   color: #333;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.login-form__input:focus {
+  border-color: #CB9274;
 }
 
 .login-form__input::-webkit-input-placeholder {
@@ -4650,6 +4655,18 @@ input[type=range]::-webkit-slider-thumb {
   color: #fff;
   padding: 2.0625rem 2.0625rem 2.0625rem 2.0625rem;
   background: #CB9274;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  font-weight: bold;
+  font-size: 1.125rem;
+  line-height: 140%;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.login-form__submit:hover {
+  background-color: #ba866a;
 }
 
 .login-form__submit svg {
