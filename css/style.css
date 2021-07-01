@@ -1040,6 +1040,20 @@ input[type=range]::-webkit-slider-thumb {
   background-repeat: no-repeat;
 }
 
+.input__clear {
+  color: #cb9274;
+  font-size: 1.125rem;
+  line-height: 1em;
+  text-decoration: underline;
+  cursor: pointer;
+  position: absolute;
+  right: 1.25rem;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
 .textarea__label {
   margin-bottom: 1.25rem;
 }
@@ -1973,6 +1987,10 @@ input[type=range]::-webkit-slider-thumb {
           transform: translateY(-50%);
 }
 
+.table .checkbox.checkbox-all {
+  top: 8px;
+}
+
 .table .flex {
   position: relative;
 }
@@ -1983,6 +2001,7 @@ input[type=range]::-webkit-slider-thumb {
   display: flex;
   padding-bottom: 2.5rem;
   border-bottom: 0.0625rem solid #e0e0e0;
+  position: relative;
 }
 
 .table__th {
@@ -2084,6 +2103,8 @@ input[type=range]::-webkit-slider-thumb {
   border: 1px solid #CB9274;
   background-color: #CB9274;
   color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 .table__add--delete:hover {
@@ -4596,7 +4617,7 @@ input[type=range]::-webkit-slider-thumb {
 .login-form__input {
   background: #FFFFFF;
   border: 0.0625rem solid #E0E0E0;
-  padding: 2rem 2.0625rem 1.9rem 54px;
+  padding: 2.1rem 2.0625rem 1.9rem 3.375rem;
   margin-bottom: 1.875rem;
   background-repeat: no-repeat;
   background-position: left 1.5rem center;
