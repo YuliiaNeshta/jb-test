@@ -951,14 +951,26 @@ input[type=range]::-webkit-slider-thumb {
   background-size: 2.25rem 2.25rem;
 }
 
+.media__preview.done:hover::before {
+  display: none;
+}
+
 .media__preview.process {
   background-image: none;
+}
+
+.media__preview.process:hover::before {
+  display: none;
 }
 
 .media__preview.process .timer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.media__preview.process .timer:hover::before {
+  display: none;
 }
 
 .media__preview:hover::before {
