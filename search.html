@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Search</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.1.1/remodal.min.css"
+		integrity="sha512-UO+dUiFTr6cCaPZKCzXEGhYsuK8DkGAS5iThyMUrtHsg+INCFyRM3GiqJ4rjuvfEyn81XGjpfmjSwwR1dAjAsw=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.1.1/remodal-default-theme.min.css"
+		integrity="sha512-jRxwiuoe3nt8lMSnOzNEuQ7ckDrLl31dwVYFWS6jklXQ6Nzl7b05rrWF9gjSxgOow5nFerdoN6CBB4gY5m5nDw=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<button class=" btn search-btn" data-remodal-target="search-modal">
+	open search
+</button>
+<div class="remodal search__wrap" data-remodal-id="search-modal">
+	<div class="search">
+		<button data-remodal-action="close" class="search__close">
+			<img src="./img/menu/close-black.svg" alt="Close Menu" />
+		</button>
+		<h1 class="search__title">Search results for <span class="search__result-text">“Summer time
+				weddings”</span>
+		</h1>
+		<div class="search__wrap">
+			<input type="text" class="search__input" placeholder="Summer time weddings">
+			<button class="search__btn btn">search</button>
+		</div>
+		<div class="search__result"></div>
+		<div class="search__footer">
+			<p class="search__footer-text">
+				Start typing to search for incredible real weddings,
+				reliable local vendors or magnificent weddings inspiration
+				from our blog and gallery.
+			</p>
+			<a href="#" class="search__logo">
+				<img src="./img/menu/logo-circle-search.svg" alt="" />
+			</a>
+		</div>
+	</div>
+</div>
+
+<body>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+		integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.1.1/remodal.min.js"
+		integrity="sha512-a/KwXZUMuN0N2aqT/nuvYp6mg1zKg8OfvovbIlh4ByLw+BJ4sDrJwQM/iSOd567gx+yS0pQixA4EnxBlHgrL6A=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script>
+		$(document).ready(function () {
+			slideMenu = $('.menu')
+			$('.seacrh-btn').click(function () {
+				slideMenu.addClass('active');
+			});
+			$('.search__close').click(function () {
+				slideMenu.removeClass('active');
+			})
+		});
+	</script>
+</body>
+
+</html>
