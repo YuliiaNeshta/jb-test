@@ -9,9 +9,9 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.1.1/remodal.min.css"
 		integrity="sha512-UO+dUiFTr6cCaPZKCzXEGhYsuK8DkGAS5iThyMUrtHsg+INCFyRM3GiqJ4rjuvfEyn81XGjpfmjSwwR1dAjAsw=="
 		crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.1.1/remodal-default-theme.min.css"
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.1.1/remodal-default-theme.min.css"
 		integrity="sha512-jRxwiuoe3nt8lMSnOzNEuQ7ckDrLl31dwVYFWS6jklXQ6Nzl7b05rrWF9gjSxgOow5nFerdoN6CBB4gY5m5nDw=="
-		crossorigin="anonymous" referrerpolicy="no-referrer" />
+		crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
 	<link rel="stylesheet" href="./css/style.css" />
 </head>
 <div class="remodal-bg">
@@ -22,15 +22,19 @@
 
 <div class="remodal search__wrap" data-remodal-id="search-modal">
 	<div class="search">
-		<button data-remodal-action="close" class="search__close">
-			<img src="./img/menu/close-black.svg" alt="Close Menu" />
-		</button>
+
 		<h1 class="search__title">Search results for <span class="search__result-text">“Summer time
 				weddings”</span>
+			<button data-remodal-action="close" class="search__close">
+				<img src="./img/menu/close-black.svg" alt="Close Menu" />
+			</button>
 		</h1>
 		<div class="search__wrap">
 			<input type="text" class="search__input" placeholder="Summer time weddings">
-			<button class="search__btn btn">search</button>
+			<button class="search__btn btn">search
+
+				<div class="search__btn-icon"></div>
+			</button>
 		</div>
 		<div class="search__result"></div>
 		<div class="search__footer">
@@ -54,15 +58,7 @@
 		integrity="sha512-a/KwXZUMuN0N2aqT/nuvYp6mg1zKg8OfvovbIlh4ByLw+BJ4sDrJwQM/iSOd567gx+yS0pQixA4EnxBlHgrL6A=="
 		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script>
-		$(document).ready(function () {
-			slideMenu = $('.menu')
-			$('.seacrh-btn').click(function () {
-				slideMenu.addClass('active');
-			});
-			$('.search__close').click(function () {
-				slideMenu.removeClass('active');
-			})
-		});
+		$('.search__wrap').prev().addClass('no-after')
 	</script>
 </body>
 
