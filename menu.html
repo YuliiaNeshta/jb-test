@@ -13,13 +13,19 @@
 </head>
 
 <body>
-
-	<div class="menu-btn w-nav-button" aria-label="menu" role="button" tabindex="0">
-		<div class="menu-btn__lines">
-			<div class="menu-btn__line menu-btn__line--1"></div>
-			<div class="menu-btn__line menu-btn__line--2"></div>
+	<div class="temporary-menu">
+		<div class="temporary-menu__block"></div>
+		<div class="menu-btn w-nav-button w--open" aria-label="menu" role="button" tabindex="0"
+			aria-controls="w-nav-overlay-0" aria-haspopup="menu" aria-expanded="true">
+			<div class="menu-btn__lines">
+				<div class="menu-btn__line menu-btn__line--1">
+				</div>
+				<div class="menu-btn__line menu-btn__line--2">
+				</div>
+			</div>
 		</div>
 	</div>
+
 
 	<p>
 		Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore fuga accusamus necessitatibus deleniti non
@@ -176,15 +182,15 @@
 							<span class="menu-slider__time">
 								published: 2 hours ago
 							</span>
-							<h1 class="menu-slider__title">
+							<a class="menu-slider__title">
 								jack & Maria's Amazing wedding in New York City
-							</h1>
-							<p class="menu-slider__vendors"> <span>Photography</span> / Rachel Dibs Photography
-								Venue
+							</a>
+							<p class="menu-slider__vendors">Photography / <a>Rachel Dibs Photography Venue</a>
+
 							</p>
-							<p class="menu-slider__vendors"> <span>Private Property
-									Style</span>
-								/ Summer</p>
+							<p class="menu-slider__vendors">Private Property
+								Style
+								/ <a>Summer</a> </p>
 						</div>
 					</div>
 					<div class="menu-slider__wrap">
@@ -195,34 +201,34 @@
 							<span class="menu-slider__time">
 								published: 2 hours ago
 							</span>
-							<h1 class="menu-slider__title">
+							<a class="menu-slider__title">
 								jack & Maria's Amazing wedding in New York City
-							</h1>
-							<p class="menu-slider__vendors"> <span>Photography</span> / Rachel Dibs Photography
-								Venue
+							</a>
+							<p class="menu-slider__vendors">Photography / <a>Rachel Dibs Photography Venue</a>
+
 							</p>
-							<p class="menu-slider__vendors"> <span>Private Property
-									Style</span>
-								/ Summer</p>
+							<p class="menu-slider__vendors">Private Property
+								Style
+								/ <a>Summer</a> </p>
 						</div>
 					</div>
 					<div class="menu-slider__wrap">
 						<div class="menu-slider__img">
-							<img src="./img/menu/photo.png" alt="" />
+							<img src="./img/post-img.jpg" alt="" />
 						</div>
 						<div class="menu-slider__info">
 							<span class="menu-slider__time">
 								published: 2 hours ago
 							</span>
-							<h1 class="menu-slider__title">
+							<a class="menu-slider__title">
 								jack & Maria's Amazing wedding in New York City
-							</h1>
-							<p class="menu-slider__vendors"> <span>Photography</span> / Rachel Dibs Photography
-								Venue
+							</a>
+							<p class="menu-slider__vendors">Photography / <a>Rachel Dibs Photography Venue</a>
+
 							</p>
-							<p class="menu-slider__vendors"> <span>Private Property
-									Style</span>
-								/ Summer</p>
+							<p class="menu-slider__vendors">Private Property
+								Style
+								/ <a>Summer</a> </p>
 						</div>
 					</div>
 				</div>
@@ -237,33 +243,34 @@
 						<span class="menu-news__type">
 							wedding tips
 						</span>
-						<p class="menu-news__text">
+						<a class="menu-news__text">
 							Tips for Planning a Wedding & Honeymoon in French Polynesia
-						</p>
+						</a>
 					</div>
 					<div class="menu-news__card">
 						<span class="menu-news__type">
 							wedding tips
 						</span>
-						<p class="menu-news__text">
+						<a class="menu-news__text">
 							The Parts of the Wedding That Are (and Aren't!) Worth a Splurge
-						</p>
+						</a>
 					</div>
-					<div class="menu-news__card">
+
+					<div class="menu-news__card hide-tablet">
 						<span class="menu-news__type">
 							wedding tips
 						</span>
-						<p class="menu-news__text">
+						<a class="menu-news__text">
 							How to Get Your Mom to Agree on Your Wedding Dress
-						</p>
+						</a>
 					</div>
-					<div class="menu-news__card">
+					<div class="menu-news__card hide-tablet">
 						<span class="menu-news__type">
 							wedding tips
 						</span>
-						<p class="menu-news__text">
+						<a class="menu-news__text">
 							An Elegant Shoot to Inspire Your Pre-Ceremony Activities
-						</p>
+						</a>
 					</div>
 				</div>
 				<div class="menu-news__social">
@@ -353,12 +360,14 @@
 	<script>
 		$(document).ready(function () {
 			slideMenu = $('.menu')
-			$('.menu-btn__lines').click(function () {
-				slideMenu.addClass('active');
+			$('.menu-btn').click(function () {
+				slideMenu.toggleClass('active');
+				$(document.body).toggleClass('overflow-hidden')
+				$('.menu-btn').toggleClass('open');
 			});
-			$('.menu__close').click(function () {
-				slideMenu.removeClass('active');
-			})
+			// $('.menu__close').click(function () {
+			// 	slideMenu.removeClass('active');
+			// })
 		});
 	</script>
 </body>
