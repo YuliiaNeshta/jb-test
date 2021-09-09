@@ -4987,7 +4987,7 @@ body.overflow-hidden {
 
 .menu__main {
   background-color: #CB9274;
-  padding: 3vw 3vw 6.25vw 6.25vw;
+  padding: 3vw 3vw 3.7vw 6.25vw;
   position: relative;
   background-image: url(../img/menu/logo-circle.svg);
   background-repeat: no-repeat;
@@ -5055,7 +5055,6 @@ body.overflow-hidden {
 
 .menu__link:hover {
   font-style: italic;
-  text-decoration: underline;
 }
 
 .menu__link span {
@@ -5200,31 +5199,29 @@ body.overflow-hidden {
 
 .menu-slider__img {
   margin-right: 1.56vw;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 30%;
-          flex: 0 0 30%;
   z-index: 2;
 }
 
 .menu-slider__img img {
-  width: 100%;
-  height: 100%;
+  vertical-align: middle;
   display: inline-block;
   -o-object-fit: cover;
      object-fit: cover;
+  width: 187px;
+  height: 231px;
 }
 
 .menu-slider__time {
   display: inline-block;
   font-family: "Aktiv Grotesk", sans-serif;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 0.625vw;
   line-height: 0.625vw;
   letter-spacing: 0.215em;
   text-transform: uppercase;
   color: #CB9274;
-  margin-bottom: 1.04vw;
+  margin-bottom: 0.8vw;
 }
 
 .menu-slider__title {
@@ -5235,14 +5232,15 @@ body.overflow-hidden {
   line-height: 130%;
   text-transform: capitalize;
   color: #333333;
-  margin-bottom: 1.04vw;
+  margin-bottom: 0.8vw;
   cursor: pointer;
   display: block;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   overflow: hidden;
   margin-bottom: 1.04vw;
+  max-width: 340px;
 }
 
 .menu-slider__title:hover {
@@ -5255,12 +5253,16 @@ body.overflow-hidden {
   font-family: "Aktiv Grotesk", sans-serif;
   font-weight: 400;
   font-size: 0.72vw;
-  line-height: 170%;
+  line-height: 150%;
   color: #4f4f4f;
   font-weight: 700;
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
+}
+
+.menu-slider__vendors a {
+  color: #828282;
 }
 
 .menu-slider__vendors a {
@@ -5808,6 +5810,22 @@ body.overflow-hidden {
   }
 }
 
+@media screen and (max-width: 1025px) {
+  .menu-slider__img {
+    max-height: 321px;
+    margin-right: 0px;
+    margin-top: 22px;
+    width: 100%;
+  }
+
+  .menu-slider__img img {
+    width: 100%;
+    height: 321px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+
 @media screen and (max-width: 1024px) {
   .menu.active {
     overflow-x: hidden;
@@ -5862,6 +5880,13 @@ body.overflow-hidden {
   .menu__link {
     margin-bottom: 65px;
     font-size: 50px;
+  }
+
+  .menu__link span {
+    font-size: 16px;
+    margin-right: 14px;
+    top: 0.52vw;
+    left: -11px;
   }
 
   .menu__social {
@@ -5920,12 +5945,6 @@ body.overflow-hidden {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-  }
-
-  .menu-slider__img {
-    max-height: 321px;
-    margin-right: 0px;
-    margin-top: 22px;
   }
 
   .menu-slider__time {
@@ -6134,7 +6153,7 @@ body.overflow-hidden {
 
   .menu-slider__img img {
     width: 100%;
-    height: 100%;
+    height: 255px;
     -o-object-fit: cover;
        object-fit: cover;
   }
