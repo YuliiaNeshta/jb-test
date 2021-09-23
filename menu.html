@@ -318,8 +318,8 @@
 				<a href="" class="menu__social-link">Instagram</a>
 				<a href="" class="menu__social-link">Facebook</a>
 				<a href="" class="menu__social-link">Pinterest</a>
-				<a href="" class="menu__social-link">Twitter</a>
-				<a href="" class="menu__social-link">Wedding submission</a>
+				<a href="" class="menu__social-link no-margin">Twitter</a>
+				<a href="" class="menu__social-link no-margin">Wedding submission</a>
 			</div>
 			<p class="menu__c">
 				© 2020 Jewish Brides. All rights reserved.
@@ -370,6 +370,18 @@
 			// 	slideMenu.removeClass('active');
 			// })
 		});
+
+		function isTouchDevice() {
+			return 'ontouchstart' in document.documentElement;
+		}
+
+		if (isTouchDevice()) {
+			console.log('true')
+			document.querySelector('body').classList.add('touch-device');
+		} else {
+			console.log('false')
+			document.querySelector('body').classList.remove('touch-device');
+		}
 	</script>
 </body>
 
