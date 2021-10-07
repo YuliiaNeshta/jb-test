@@ -620,6 +620,14 @@ body.overflow-hidden {
   cursor: pointer;
 }
 
+.menu-social__icons {
+  display: none;
+}
+
+.menu-social__icon {
+  margin-right: 40px;
+}
+
 @media screen and (max-width: 1555px) {
   .menu-slider__img img {
     max-height: 215px;
@@ -750,6 +758,12 @@ body.overflow-hidden {
 }
 
 @media screen and (max-width: 1024px) {
+  .menu-btn {
+    position: absolute;
+    right: 20px;
+    top: 51px;
+  }
+
   .menu.active {
     overflow-x: hidden;
     -ms-flex-wrap: wrap;
@@ -822,7 +836,7 @@ body.overflow-hidden {
             align-items: center;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    margin-right: -50px;
+    margin-right: -40px;
   }
 
   .menu__social-link {
@@ -830,6 +844,7 @@ body.overflow-hidden {
     line-height: 100%;
     margin-bottom: 20px;
     margin-right: 50px;
+    display: none;
   }
 
   .menu__column-left {
@@ -926,6 +941,15 @@ body.overflow-hidden {
     font-size: 18px;
     line-height: 160%;
   }
+
+  .menu-social__icons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
 @media screen and (max-width: 1024px) and (orientation: landscape) {
@@ -1020,6 +1044,11 @@ body.overflow-hidden {
 }
 
 @media screen and (max-width: 991px) {
+  .menu-btn {
+    right: 0px;
+    top: 25px;
+  }
+
   .menu-btn__line {
     width: 40px;
   }
@@ -1030,6 +1059,97 @@ body.overflow-hidden {
     margin-right: -6px;
     padding-right: 6px;
     padding-left: 6px;
+  }
+}
+
+@media screen and (max-width: 900px) and (orientation: landscape) {
+  .touch-device .menu__main {
+    width: 100%;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+    padding: 33px 46px 40px 34px;
+    background-image: none;
+  }
+
+  .touch-device .menu__column-left {
+    width: 100%;
+  }
+
+  .touch-device .menu__link {
+    margin: 0 0 34px 0;
+  }
+
+  .touch-device .menu__list {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    width: 100%;
+  }
+
+  .touch-device .menu__logo {
+    margin-bottom: 31px;
+  }
+
+  .touch-device .menu__logo img {
+    max-width: 182px;
+    margin-left: -19px;
+  }
+
+  .touch-device .menu-news {
+    padding: 46px 40px 42px 22px;
+  }
+
+  .touch-device .menu__column {
+    text-align: initial;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+
+  .touch-device .menu-news__type {
+    font-size: 10px;
+    margin-bottom: 7px;
+  }
+
+  .touch-device .menu-social__icons {
+    display: none;
+  }
+
+  .touch-device .menu__list {
+    margin-bottom: 0px;
+  }
+
+  .touch-device .menu__c {
+    display: none;
+  }
+
+  .touch-device .menu-news__social {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 60px auto 30px auto;
+  }
+
+  .touch-device .menu-news__c {
+    display: block;
+    margin: 0 auto;
   }
 }
 
@@ -1160,15 +1280,28 @@ body.overflow-hidden {
   }
 }
 
+@media screen and (max-width: 768px) {
+  .menu-slider__wrap {
+    width: 300px;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
+
 @media screen and (max-width: 479px) {
   .menu-slider__img img {
     width: 100%;
     max-height: 383px;
-    height: auto;
+    height: 100%;
   }
 }
 
 @media screen and (max-width: 475px) {
+  .menu-btn {
+    top: 9px;
+  }
+
   .temporary-menu {
     padding: 34px 20px;
   }
@@ -1263,6 +1396,7 @@ body.overflow-hidden {
 
   .menu-slider__link-all {
     display: block;
+    font-family: "Aktiv Grotesk", sans-serif;
     font-weight: 500;
     font-size: 10px;
     line-height: 12px;
@@ -1377,5 +1511,9 @@ body.overflow-hidden {
 
   .menu-news__card.hide-tablet {
     display: block;
+  }
+
+  .menu-social__icons {
+    display: none;
   }
 }
