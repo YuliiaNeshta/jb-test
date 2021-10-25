@@ -416,95 +416,101 @@
       referrerpolicy="no-referrer"
     ></script>
     <script>
-      let slickInit = false;
-      let orientation = screen.orientation.type;
-      console.log(orientation);
-      document.querySelector(".menu-btn").addEventListener(
-        "click",
-        () => {
-          if (!slickInit) {
-            if (orientation === "landscape-primary") {
-              setTimeout(() => {
-                $(".menu-slider__slider").slick({
-                  infinite: true,
-                  speed: 500,
-                  fade: true,
-                  cssEase: "linear",
-                  prevArrow: ".menu-slider__prev",
-                  nextArrow: ".menu-slider__next",
-                  dots: false,
-
-                  draggable: false,
-                  swipe: true,
-                  touchMove: false,
-                  slidesToScroll: 1,
-                  waitForAnimate: false,
-
-                  responsive: [
-                    {
-                      breakpoint: 901,
-                      settings: {
-                        slidesToShow: 1,
-                        cssEase: "ease",
-                        fade: false,
-                        variableWidth: true,
-                      },
-                    },
-                  ],
-                });
-              });
-            } else {
-              setTimeout(() => {
-                $(".menu-slider__slider").slick({
-                  infinite: true,
-                  speed: 500,
-                  fade: true,
-                  cssEase: "linear",
-                  prevArrow: ".menu-slider__prev",
-                  nextArrow: ".menu-slider__next",
-                  dots: false,
-
-                  draggable: false,
-                  swipe: true,
-                  touchMove: false,
-                  slidesToScroll: 1,
-                  waitForAnimate: false,
-
-                  responsive: [
-                    {
-                      breakpoint: 901,
-                      settings: {
-                        slidesToShow: 1,
-                        cssEase: "linear",
-                        fade: true,
-                        variableWidth: false,
-                      },
-                    },
-                    {
-                      breakpoint: 476,
-                      settings: {
-                        slidesToShow: 1,
-                        cssEase: "ease",
-                        fade: false,
-                        variableWidth: true,
-                      },
-                    },
-                  ],
-                });
-              });
-            }
-          }
-          slickInit = true;
-        },
-        0
-      );
-    </script>
-    <script>
       const menuLinks = document.querySelectorAll(".menu__link-text span");
       console.log(menuLinks);
       for (let i = 1; i < menuLinks.length + 1; i++) {
         menuLinks[i - 1].setAttribute("data-index", "0" + i);
       }
+    </script>
+    <script>
+      (function disableScrollWhileMenuIsOpen() {
+        const menuBtn = document.querySelector(".menu");
+        const config = {
+          attributes: true,
+        };
+
+        const callback = function menuToggleCallback(mutationsList) {
+          for (let i = 0; i < mutationsList.length; i++) {
+            const mutation = mutationsList[i];
+            if (mutation.target.classList.contains("active")) {
+              if (orientation === "landscape-primary") {
+                setTimeout(() => {
+                  $(".menu-slider__slider").slick({
+                    infinite: true,
+                    speed: 500,
+                    fade: true,
+                    cssEase: "linear",
+                    prevArrow: ".menu-slider__prev",
+                    nextArrow: ".menu-slider__next",
+                    dots: false,
+
+                    draggable: false,
+                    swipe: true,
+                    touchMove: false,
+                    slidesToScroll: 1,
+                    waitForAnimate: false,
+
+                    responsive: [
+                      {
+                        breakpoint: 901,
+                        settings: {
+                          slidesToShow: 1,
+                          cssEase: "ease",
+                          fade: false,
+                          variableWidth: true,
+                        },
+                      },
+                    ],
+                  });
+                });
+              } else {
+                setTimeout(() => {
+                  $(".menu-slider__slider").slick({
+                    infinite: true,
+                    speed: 500,
+                    fade: true,
+                    cssEase: "linear",
+                    prevArrow: ".menu-slider__prev",
+                    nextArrow: ".menu-slider__next",
+                    dots: false,
+
+                    draggable: false,
+                    swipe: true,
+                    touchMove: false,
+                    slidesToScroll: 1,
+                    waitForAnimate: false,
+
+                    responsive: [
+                      {
+                        breakpoint: 901,
+                        settings: {
+                          slidesToShow: 1,
+                          cssEase: "linear",
+                          fade: true,
+                          variableWidth: false,
+                        },
+                      },
+                      {
+                        breakpoint: 476,
+                        settings: {
+                          slidesToShow: 1,
+                          cssEase: "ease",
+                          fade: false,
+                          variableWidth: true,
+                        },
+                      },
+                    ],
+                  });
+                });
+              }
+              observer.disconnect();
+            }
+          }
+        };
+
+        const observer = new MutationObserver(callback);
+        observer.observe(menuBtn, config);
+      })();
     </script>
     <script>
       $(document).ready(function () {
