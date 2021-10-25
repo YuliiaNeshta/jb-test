@@ -428,7 +428,7 @@
         const config = {
           attributes: true,
         };
-
+        const orientation = screen.orientation.type;
         const callback = function menuToggleCallback(mutationsList) {
           for (let i = 0; i < mutationsList.length; i++) {
             const mutation = mutationsList[i];

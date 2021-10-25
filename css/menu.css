@@ -3,6 +3,11 @@
 *::after {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+  width: 0;
 }
 
 input:focus,
@@ -62,25 +67,25 @@ body.overflow-hidden {
   margin-left: auto;
   transition: transform 0.3s ease;
 }
+.menu-btn__line--1 {
+  margin-bottom: 12px;
+}
+.menu-btn__line--2 {
+  margin-top: 12px;
+}
 .open .menu-btn__lines:hover {
   transform: rotate(90deg);
-}
-
-.menu-btn__line--1 {
-  margin-bottom: 19px;
 }
 
 .menu-btn {
   z-index: 9999;
   width: 3.3333vw;
   height: 4.21875vw;
-  margin: 2vw;
+  margin-left: 2vw;
   padding: 0px;
   display: block;
-  margin-left: auto;
   cursor: pointer;
   position: relative;
-  margin-left: 5.20833vw;
 }
 
 .menu-btn.open {
