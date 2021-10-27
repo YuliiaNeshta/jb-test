@@ -426,14 +426,37 @@
         menuLinks[i - 1].setAttribute("data-index", "0" + i);
       }
     </script>
+    <script>
+      if (window.innerWidth < 476) {
+        const menuMainHeight =
+          document.querySelector(".menu__main").scrollHeight;
+        const menu = document.querySelector(".menu");
+        const menuButton = document.querySelector(".menu-btn");
 
+        function getOffset(el) {
+          var _y = 0;
+          while (el && !isNaN(el.offsetTop)) {
+            _y += el.offsetTop - el.scrollTop;
+            el = el.offsetParent;
+          }
+          return { top: _y };
+        }
+
+        menu.addEventListener("scroll", () => {
+          if (Math.abs(getOffset(menu).top) > menuMainHeight) {
+            menuButton.classList.add("menu-btn--invert");
+          } else {
+            menuButton.classList.remove("menu-btn--invert");
+          }
+        });
+      }
+    </script>
     <script>
       const orientationLandscape = window.matchMedia(
         "(orientation: landscape)"
       ).matches;
-      console.log(!!orientation);
 
-      if (!!orientation) {
+      if (!!orientationLandscape) {
         $(".menu-slider__slider").slick({
           infinite: true,
           speed: 500,
@@ -481,8 +504,7 @@
             {
               breakpoint: 901,
               settings: {
-                slidesToShow: 1,
-                cssEase: "linear",
+                cssEase: "ease",
                 fade: true,
                 variableWidth: false,
               },
@@ -490,7 +512,6 @@
             {
               breakpoint: 476,
               settings: {
-                slidesToShow: 1,
                 cssEase: "ease",
                 fade: false,
                 variableWidth: true,
