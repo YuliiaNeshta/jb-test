@@ -68,10 +68,10 @@ body.overflow-hidden {
   transition: transform 0.3s ease;
 }
 .menu-btn__line--1 {
-  margin-bottom: 12px;
+  transform: translateY(-6px);
 }
 .menu-btn__line--2 {
-  margin-top: 12px;
+  transform: translateY(6px);
 }
 .open .menu-btn__lines:hover {
   transform: rotate(90deg);
@@ -86,10 +86,6 @@ body.overflow-hidden {
   display: block;
   cursor: pointer;
   position: relative;
-}
-
-.menu-btn.open {
-  margin: 0px;
 }
 
 .menu-btn.open .menu-btn__line {
@@ -112,7 +108,7 @@ body.overflow-hidden {
 
 .menu-btn__line {
   position: absolute;
-  width: 3.3333vw;
+  width: 100%;
   height: 2px;
   background-color: #000;
   -webkit-transition: all 0.3s ease 0s;
@@ -124,7 +120,8 @@ body.overflow-hidden {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 1vw 40px;
+  padding: 1vw 3.125vw;
+  align-items: center;
 }
 
 .temporary-menu__block {
@@ -145,10 +142,11 @@ body.overflow-hidden {
   height: 100%;
   z-index: 999;
   opacity: 0;
-  visibility: hidden;
+  pointer-events: none;
   -webkit-transition: all 800ms ease 0s;
   -o-transition: all 800ms ease 0s;
   transition: all 800ms ease 0s;
+  background-color: #fff;
 }
 .menu-wrapper {
   max-height: 100vh;
@@ -166,7 +164,7 @@ body.overflow-hidden {
 
 .menu.active {
   opacity: 1;
-  visibility: visible;
+  pointer-events: auto;
   -webkit-transform: translateY(0%);
   -ms-transform: translateY(0%);
   transform: translateY(0%);
@@ -240,8 +238,6 @@ body.overflow-hidden {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  opacity: 0;
-  visibility: hidden;
   -webkit-transition: all 800ms ease 0.5s;
   -o-transition: all 800ms ease 0.5s;
   transition: all 800ms ease 0.5s;
@@ -403,8 +399,6 @@ body.overflow-hidden {
   padding: 3vw;
   /*height: 50vh;*/
   position: relative;
-  opacity: 0;
-  visibility: hidden;
   -webkit-transition: all 800ms ease 0.3s;
   -o-transition: all 800ms ease 0.3s;
   transition: all 800ms ease 0.3s;
@@ -419,7 +413,11 @@ body.overflow-hidden {
   -ms-flex-pack: start;
   justify-content: flex-start;
 }
-
+.menu-slider__slider {
+  max-width: 100%;
+}
+.menu-slider__container {
+}
 .menu-slider__slider .slick-track {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -482,6 +480,7 @@ body.overflow-hidden {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  max-width: 100%;
 }
 
 .menu-slider__img {
@@ -569,9 +568,7 @@ body.overflow-hidden {
 
 .menu-news {
   padding: 3vw;
-  height: 50vh;
-  opacity: 0;
-  visibility: hidden;
+  /* height: 50vh; */
   -webkit-transition: all 800ms ease 0.5s;
   -o-transition: all 800ms ease 0.5s;
   transition: all 800ms ease 0.5s;
@@ -714,14 +711,10 @@ body.overflow-hidden {
   .menu-wrapper {
     height: fit-content;
   }
+
   .touch-device .menu-btn__lines {
     width: 100%;
     height: 100%;
-  }
-  .menu-btn {
-    width: 40px;
-    height: 40px;
-    top: 10px;
   }
 }
 @media screen and (max-width: 1367px) and (orientation: landscape) {
@@ -751,7 +744,7 @@ body.overflow-hidden {
     display: flex;
     flex-direction: row;
     max-height: unset;
-    height: unset;
+    height: 100%;
   }
   .touch-device .menu__circle {
     right: -245px;
@@ -798,7 +791,7 @@ body.overflow-hidden {
     align-items: center;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    margin-right: -50px;
+    /* margin-right: -50px; */
     margin: 0 auto;
   }
 
@@ -877,11 +870,12 @@ body.overflow-hidden {
     max-height: unset;
     height: unset;
   }
-
+  .temporary-menu__block {
+    height: 60px;
+  }
   .menu-btn {
     position: absolute;
-    right: 44px;
-    top: 55px;
+    right: 40px;
   }
 
   .menu.active {
@@ -1076,11 +1070,6 @@ body.overflow-hidden {
 }
 
 @media screen and (max-width: 1024px) and (orientation: landscape) {
-  .touch-device .menu-btn {
-    width: 30px;
-    height: 30px;
-    top: 35px;
-  }
   .touch-device .menu__column-left {
     width: 541px;
   }
@@ -1177,12 +1166,20 @@ body.overflow-hidden {
 
 @media screen and (max-width: 991px) {
   .menu-btn {
-    right: 30px;
-    top: 35px;
+    width: 60px;
+    height: 60px;
+    margin-right: -6px;
+    padding-right: 6px;
+    padding-left: 6px;
   }
-
+  .temporary-menu {
+    padding: 1vw 40px;
+  }
+  .menu-btn__lines {
+    transform-origin: 41.7% 50%;
+  }
   .menu-btn__line {
-    width: 100%;
+    width: 40px;
   }
 }
 
@@ -1204,9 +1201,6 @@ body.overflow-hidden {
   .touch-device .menu-wrapper {
     flex-wrap: wrap;
   }
-  .touch-device .menu-btn {
-    right: 20px;
-  }
 
   .touch-device .menu__circle-wrapper {
     display: none;
@@ -1219,6 +1213,7 @@ body.overflow-hidden {
   .touch-device .menu__link {
     margin: 0 21px 25px -11px;
     text-align: left;
+    padding-left: 10px;
   }
 
   .touch-device .menu__list {
@@ -1291,7 +1286,6 @@ body.overflow-hidden {
   }
 
   .touch-device .menu-slider__wrap {
-    margin-right: 22px;
   }
 
   .touch-device .menu-slider {
@@ -1437,11 +1431,10 @@ body.overflow-hidden {
 
 @media screen and (max-width: 768px) {
   .menu-slider__wrap {
-    width: 100%;
+    /* width: 100%; */
     -webkit-box-align: start;
     -ms-flex-align: start;
     align-items: flex-start;
-    max-width: 70vw;
   }
 }
 
@@ -1453,18 +1446,6 @@ body.overflow-hidden {
   .menu-slider__slider {
     margin-top: 30px;
   }
-  .touch-device .menu-btn {
-    width: 30px;
-    height: 30px;
-    top: 35px;
-  }
-}
-
-@media screen and (max-width: 637px) {
-  .menu-wrapper {
-    max-height: unset;
-    height: unset;
-  }
 }
 
 @media screen and (max-width: 479px) {
@@ -1473,15 +1454,12 @@ body.overflow-hidden {
     max-height: 383px;
     height: 100%;
   }
+  .menu-btn {
+    right: 20px;
+  }
 }
 
 @media screen and (max-width: 475px) {
-  .touch-device .menu-btn {
-    width: 30px;
-    height: 30px;
-    top: 30px;
-    right: 20px;
-  }
   .menu-wrapper {
     flex-wrap: wrap;
   }
@@ -1489,12 +1467,8 @@ body.overflow-hidden {
     display: none;
   }
 
-  .menu-btn {
-    top: 9px;
-  }
-
   .temporary-menu {
-    padding: 34px 20px;
+    padding: 1vw 20px;
   }
 
   .menu.active {
@@ -1634,8 +1608,8 @@ body.overflow-hidden {
     -webkit-transition: all 300ms ease;
     -o-transition: all 300ms ease;
     transition: all 300ms ease;
-    margin-left: 20px;
     max-width: none;
+    margin-left: 20px;
   }
 
   .menu-slider__img {
@@ -1732,3 +1706,8 @@ body.overflow-hidden {
     left: -0.5rem;
   }
 }
+/* @media screen and (max-width: 475px) {
+  .menu-slider__wrap {
+    margin-left: 40px;
+  }
+} */

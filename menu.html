@@ -12,6 +12,10 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="./css/menu.css" />
   </head>
 
@@ -402,6 +406,7 @@
         </div>
       </div>
     </div>
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
       integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
@@ -414,102 +419,86 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+
     <script>
       const menuLinks = document.querySelectorAll(".menu__link-text span");
-      console.log(menuLinks);
       for (let i = 1; i < menuLinks.length + 1; i++) {
         menuLinks[i - 1].setAttribute("data-index", "0" + i);
       }
     </script>
+
     <script>
-      (function disableScrollWhileMenuIsOpen() {
-        const menuBtn = document.querySelector(".menu");
-        const config = {
-          attributes: true,
-        };
-        const orientation = screen.orientation.type;
-        const callback = function menuToggleCallback(mutationsList) {
-          for (let i = 0; i < mutationsList.length; i++) {
-            const mutation = mutationsList[i];
-            if (mutation.target.classList.contains("active")) {
-              if (orientation === "landscape-primary") {
-                setTimeout(() => {
-                  $(".menu-slider__slider").slick({
-                    infinite: true,
-                    speed: 500,
-                    fade: true,
-                    cssEase: "linear",
-                    prevArrow: ".menu-slider__prev",
-                    nextArrow: ".menu-slider__next",
-                    dots: false,
+      const orientationLandscape = window.matchMedia(
+        "(orientation: landscape)"
+      ).matches;
+      console.log(!!orientation);
 
-                    draggable: false,
-                    swipe: true,
-                    touchMove: false,
-                    slidesToScroll: 1,
-                    waitForAnimate: false,
+      if (!!orientation) {
+        $(".menu-slider__slider").slick({
+          infinite: true,
+          speed: 500,
+          fade: true,
+          cssEase: "linear",
+          prevArrow: ".menu-slider__prev",
+          nextArrow: ".menu-slider__next",
+          dots: false,
 
-                    responsive: [
-                      {
-                        breakpoint: 901,
-                        settings: {
-                          slidesToShow: 1,
-                          cssEase: "ease",
-                          fade: false,
-                          variableWidth: true,
-                        },
-                      },
-                    ],
-                  });
-                });
-              } else {
-                setTimeout(() => {
-                  $(".menu-slider__slider").slick({
-                    infinite: true,
-                    speed: 500,
-                    fade: true,
-                    cssEase: "linear",
-                    prevArrow: ".menu-slider__prev",
-                    nextArrow: ".menu-slider__next",
-                    dots: false,
+          draggable: false,
+          swipe: true,
+          touchMove: false,
+          slidesToScroll: 1,
+          waitForAnimate: false,
 
-                    draggable: false,
-                    swipe: true,
-                    touchMove: false,
-                    slidesToScroll: 1,
-                    waitForAnimate: false,
+          responsive: [
+            {
+              breakpoint: 901,
+              settings: {
+                slidesToShow: 1,
+                cssEase: "ease",
+                fade: false,
+                variableWidth: true,
+              },
+            },
+          ],
+        });
+      } else {
+        $(".menu-slider__slider").slick({
+          infinite: true,
+          speed: 500,
+          fade: true,
+          cssEase: "linear",
+          prevArrow: ".menu-slider__prev",
+          nextArrow: ".menu-slider__next",
+          dots: false,
 
-                    responsive: [
-                      {
-                        breakpoint: 901,
-                        settings: {
-                          slidesToShow: 1,
-                          cssEase: "linear",
-                          fade: true,
-                          variableWidth: false,
-                        },
-                      },
-                      {
-                        breakpoint: 476,
-                        settings: {
-                          slidesToShow: 1,
-                          cssEase: "ease",
-                          fade: false,
-                          variableWidth: true,
-                        },
-                      },
-                    ],
-                  });
-                });
-              }
-              observer.disconnect();
-            }
-          }
-        };
+          draggable: false,
+          swipe: true,
+          touchMove: false,
+          slidesToScroll: 1,
+          waitForAnimate: false,
 
-        const observer = new MutationObserver(callback);
-        observer.observe(menuBtn, config);
-      })();
+          responsive: [
+            {
+              breakpoint: 901,
+              settings: {
+                slidesToShow: 1,
+                cssEase: "linear",
+                fade: true,
+                variableWidth: false,
+              },
+            },
+            {
+              breakpoint: 476,
+              settings: {
+                slidesToShow: 1,
+                cssEase: "ease",
+                fade: false,
+                variableWidth: true,
+              },
+            },
+          ],
+        });
+      }
     </script>
     <script>
       $(document).ready(function () {
