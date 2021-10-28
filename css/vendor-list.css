@@ -1,0 +1,9 @@
+.vendor-list .category {
+  margin-bottom: -0.625rem;
+}
+.vendor-list .submission-table__row:first-child .submission-table__cell {
+  padding: 2.5rem 0;
+}
+.vendor-list .submission-table__row {
+  grid-template-columns: 6.875rem 1fr 1fr 1fr 1fr;
+}

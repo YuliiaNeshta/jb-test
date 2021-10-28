@@ -406,7 +406,7 @@
         </div>
       </div>
     </div>
-    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
       integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
@@ -426,99 +426,129 @@
         menuLinks[i - 1].setAttribute("data-index", "0" + i);
       }
     </script>
+
     <script>
-      if (window.innerWidth < 476) {
-        const menuMainHeight =
-          document.querySelector(".menu__main").scrollHeight;
-        const menu = document.querySelector(".menu");
-        const menuButton = document.querySelector(".menu-btn");
+      sliderInit();
 
-        function getOffset(el) {
-          var _y = 0;
-          while (el && !isNaN(el.offsetTop)) {
-            _y += el.offsetTop - el.scrollTop;
-            el = el.offsetParent;
-          }
-          return { top: _y };
+      window.addEventListener("orientationchange", () => {
+        $(".menu-slider__slider").slick("unslick");
+        setTimeout(() => {
+          sliderInit();
+        }, 100);
+      });
+
+      function sliderInit() {
+        orientation = window.orientation;
+
+        if (orientation === 90 || orientation === -90) {
+          console.log("landscape");
+          $(".menu-slider__slider").slick({
+            infinite: true,
+            speed: 500,
+            fade: true,
+            cssEase: "ease",
+            prevArrow: ".menu-slider__prev",
+            nextArrow: ".menu-slider__next",
+            dots: false,
+
+            draggable: false,
+            swipe: true,
+            touchMove: false,
+            slidesToScroll: 1,
+            waitForAnimate: false,
+
+            responsive: [
+              {
+                breakpoint: 901,
+                settings: {
+                  slidesToShow: 1,
+                  cssEase: "ease",
+                  fade: false,
+                  variableWidth: true,
+                },
+              },
+            ],
+          });
+        } else {
+          console.log("portrait");
+
+          $(".menu-slider__slider").slick({
+            infinite: true,
+            speed: 500,
+            fade: true,
+            cssEase: "linear",
+            prevArrow: ".menu-slider__prev",
+            nextArrow: ".menu-slider__next",
+            dots: false,
+
+            draggable: false,
+            swipe: true,
+            touchMove: false,
+            slidesToScroll: 1,
+            waitForAnimate: false,
+
+            responsive: [
+              {
+                breakpoint: 901,
+                settings: {
+                  cssEase: "ease",
+                  fade: true,
+                  variableWidth: false,
+                },
+              },
+              {
+                breakpoint: 476,
+                settings: {
+                  cssEase: "ease",
+                  fade: false,
+                  variableWidth: true,
+                },
+              },
+            ],
+          });
         }
-
-        menu.addEventListener("scroll", () => {
-          if (Math.abs(getOffset(menu).top) > menuMainHeight) {
-            menuButton.classList.add("menu-btn--invert");
-          } else {
-            menuButton.classList.remove("menu-btn--invert");
-          }
-        });
       }
     </script>
     <script>
-      const orientationLandscape = window.matchMedia(
-        "(orientation: landscape)"
-      ).matches;
+      const menu = document.querySelector(".menu");
+      const menuButton = document.querySelector(".menu-btn");
+      let menuMainHeight;
 
-      if (!!orientationLandscape) {
-        $(".menu-slider__slider").slick({
-          infinite: true,
-          speed: 500,
-          fade: true,
-          cssEase: "linear",
-          prevArrow: ".menu-slider__prev",
-          nextArrow: ".menu-slider__next",
-          dots: false,
+      crossColorChange();
+      window.addEventListener("resize", () => {
+        crossColorChange();
+      });
+      window.addEventListener("orientationchange", () => {
+        crossColorChange();
+      });
 
-          draggable: false,
-          swipe: true,
-          touchMove: false,
-          slidesToScroll: 1,
-          waitForAnimate: false,
+      function crossColorChange() {
+        if (
+          window.innerWidth < 476 ||
+          (window.innerWidth < 901 && orientation === 90) ||
+          (window.innerWidth < 901 && orientation === -90)
+        ) {
+          setTimeout(() => {
+            menuMainHeight = document.querySelector(".menu__main").clientHeight;
+          }, 100);
 
-          responsive: [
-            {
-              breakpoint: 901,
-              settings: {
-                slidesToShow: 1,
-                cssEase: "ease",
-                fade: false,
-                variableWidth: true,
-              },
-            },
-          ],
-        });
-      } else {
-        $(".menu-slider__slider").slick({
-          infinite: true,
-          speed: 500,
-          fade: true,
-          cssEase: "linear",
-          prevArrow: ".menu-slider__prev",
-          nextArrow: ".menu-slider__next",
-          dots: false,
+          function getOffset(el) {
+            var _y = 0;
+            while (el && !isNaN(el.offsetTop)) {
+              _y += el.offsetTop - el.scrollTop;
+              el = el.offsetParent;
+            }
+            return { top: _y };
+          }
 
-          draggable: false,
-          swipe: true,
-          touchMove: false,
-          slidesToScroll: 1,
-          waitForAnimate: false,
-
-          responsive: [
-            {
-              breakpoint: 901,
-              settings: {
-                cssEase: "ease",
-                fade: true,
-                variableWidth: false,
-              },
-            },
-            {
-              breakpoint: 476,
-              settings: {
-                cssEase: "ease",
-                fade: false,
-                variableWidth: true,
-              },
-            },
-          ],
-        });
+          menu.addEventListener("scroll", () => {
+            if (Math.abs(getOffset(menu).top) > menuMainHeight) {
+              menuButton.classList.add("menu-btn--invert");
+            } else {
+              menuButton.classList.remove("menu-btn--invert");
+            }
+          });
+        }
       }
     </script>
     <script>
