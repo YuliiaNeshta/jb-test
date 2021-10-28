@@ -1,9 +1,61 @@
 .vendor-list .category {
   margin-bottom: -0.625rem;
 }
-.vendor-list .submission-table__row:first-child .submission-table__cell {
+.vendor-list .blog-posts-table__row:first-child .blog-posts-table__cell {
   padding: 2.5rem 0;
 }
-.vendor-list .submission-table__row {
-  grid-template-columns: 6.875rem 1fr 1fr 1fr 1fr;
+.vendor-list .weddings-table {
+  margin-top: 0;
+}
+.vendor-list .blog-posts-table__row {
+  grid-template-columns: 5.5625rem 1fr 1fr 1fr 1fr;
+}
+.vendor-list .photo__preview {
+  border: none;
+}
+.vl__company-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.vendor-list .blog-posts-table__row .blog-posts-table__cell:nth-child(6) {
+  margin-left: auto;
+}
+
+.table__user {
+  cursor: pointer;
+  color: #c7c7c7;
+  margin-left: auto;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  padding: 0rem;
+  display: inline-block;
+}
+
+.table__user svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.table__user:hover {
+  color: #333333;
+}
+
+.table__user:focus {
+  outline: 0;
+}
+
+.vendor-list .blog-posts-table__heading {
+  height: unset;
+  padding: 0;
+}
+.vendor-list .blog-posts-table__subtitle {
+  position: relative;
+}
+.vendor-list .input__clear {
+  padding: 0;
+  height: 20px;
+  width: 20px;
+  right: 1.875rem;
 }

@@ -719,7 +719,7 @@ body.overflow-hidden {
   }
 }
 @media screen and (max-width: 1367px) {
-  .menu-wrapper {
+  .touch-device .menu-wrapper {
     height: fit-content;
   }
 
