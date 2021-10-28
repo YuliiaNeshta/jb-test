@@ -406,7 +406,7 @@ body.overflow-hidden {
   background: #f2f2f2;
   border-bottom: 1px solid #e0e0e0;
   padding: 3vw;
-  /*height: 50vh;*/
+  max-height: 50vh;
   position: relative;
   -webkit-transition: all 800ms ease 0.3s;
   -o-transition: all 800ms ease 0.3s;
@@ -578,8 +578,8 @@ body.overflow-hidden {
 }
 
 .menu-news {
-  padding: 3vw;
-  /* height: 50vh; */
+  padding: 2.5vw 3vw;
+  max-height: 50vh;
   -webkit-transition: all 800ms ease 0.5s;
   -o-transition: all 800ms ease 0.5s;
   transition: all 800ms ease 0.5s;
@@ -719,6 +719,10 @@ body.overflow-hidden {
   }
 }
 @media screen and (max-width: 1367px) {
+  .menu-news,
+  .menu-slider {
+    max-height: unset;
+  }
   .touch-device .menu-wrapper {
     height: fit-content;
   }
@@ -877,7 +881,7 @@ body.overflow-hidden {
 }
 
 @media screen and (max-width: 1024px) {
-  .menu-wrapper {
+  .touch-device .menu-wrapper {
     max-height: unset;
     height: unset;
   }
