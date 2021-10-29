@@ -139,7 +139,7 @@
 
 		btnSearch.addEventListener("click", () => {
 			searchWrap.classList.add("search__wrap--black");
-			$(searchTimer).fadeIn("slow");
+			$(searchTimer).delay(900).fadeIn("slow");
 			$(searchWrapInput).fadeOut("slow");
 			$(searchFooter).fadeOut("slow");
 
@@ -151,13 +151,15 @@
 
 				$(searchTitleResult).delay(900).fadeIn("slow");
 				searchTitleSpan.textContent = `“${searchInput.value}”`;
-
+				$(searchWrapInput).css("display", "flex")
+					.hide()
+					.delay(1300)
+					.fadeIn("slow");
 				$(category).css("display", "flex")
 					.hide()
-					.delay(1400)
-					.fadeIn();
-				$(searchWrapInput).delay(1200).fadeIn("slow");
-				$(allPostBtn).delay(1600).fadeIn("slow");
+					.delay(1600)
+					.fadeIn("slow");
+				$(allPostBtn).delay(1800).fadeIn("slow");
 
 			}
 			setTimeout(result, 3000);
