@@ -115,6 +115,9 @@
 .add-vendor-table__row:hover .add-vendor-table__heading {
   color: #cb9274;
 }
+.add-vendor-table__row:hover span {
+  filter: brightness(0.95);
+}
 .add-vendor-table__heading {
   font-size: 1rem;
   line-height: 1em;
@@ -140,6 +143,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: 40%;
+  transition: filter 0.3s ease;
 }
 .add-vendor__checkbox:checked + span {
   background-image: url("../img/vendor-list/add-vendor-check.svg");
@@ -163,9 +167,18 @@
 .add-vendor__button-cancel {
   color: #c5c5c5;
   box-shadow: 0 0 0 1px #c5c5c5;
+  transition: all 0.3s ease;
+}
+.add-vendor__button-cancel:hover {
+  color: #cb9274;
+  box-shadow: 0 0 0 1px #cb9274;
 }
 .add-vendor__button-confirm {
   color: #ffffff;
   background-color: #cb9274;
   margin-left: 1.25rem;
+  transition: filter 0.3s ease;
+}
+.add-vendor__button-confirm:hover {
+  filter: brightness(0.95);
 }
