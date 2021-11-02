@@ -54,7 +54,6 @@
 			</div>
 			<div class="search__result">
 
-
 				<div class="search__category">
 					<label class="category__btn">
 						<input type="radio" checked name="category" />
@@ -76,7 +75,15 @@
 						<input type="radio" name="category" />
 						<span>Gallery</span>
 					</label>
+					<label class="category__btn">
+						<input type="radio" name="category" />
+						<span>Gallery</span>
+					</label>
 				</div>
+				<div class="search__category-wrp">
+
+				</div>
+
 
 				<div class="search__result-blocks"></div>
 				<div class="search__btn-wrap">
@@ -164,6 +171,34 @@
 			}
 			setTimeout(result, 3000);
 		});
+
+		const categorySection = document.querySelector('.search__category-wrp .search__category')
+
+
+		var $bl = $(".search__category-wrp"),
+			$th = $(".search__category"),
+			blW = $bl.outerWidth(),
+			blSW = $bl[0].scrollWidth,
+			wDiff = blSW / blW - 1, // widths difference ratio
+			mPadd = 60, // Mousemove Padding
+			damp = 20, // Mousemove response softness
+			mX = 0, // Real mouse position
+			mX2 = 0, // Modified mouse position
+			posX = 0,
+			mmAA = blW - mPadd * 2, // The mousemove available area
+			mmAAr = blW / mmAA; // get available mousemove fidderence ratio
+
+		$bl.mousemove(function (e) {
+			mX = e.pageX - this.offsetLeft;
+			mX2 = Math.min(Math.max(0, mX - mPadd), mmAA) * mmAAr;
+		});
+
+		setInterval(function () {
+			posX += (mX2 - posX) / damp; // zeno's paradox equation "catching delay"
+			$th.css({
+				marginLeft: -posX * wDiff,
+			});
+		}, 10);
 	</script>
 </body>
 
