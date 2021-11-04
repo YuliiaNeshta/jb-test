@@ -16,6 +16,8 @@
 </div>
 
 <div class="search__wrap">
+
+
 	<div class="search">
 
 		<div class="search__header">
@@ -26,6 +28,9 @@
 				Search results for
 				<span class="search__result-text"></span>
 			</h1>
+			<span class="search__title search__title--searching">
+				Searching...
+			</span>
 			<button class="search__close">
 				<svg xmlns="http://www.w3.org/2000/svg" width="45" height="46" viewBox="0 0 45 46" fill="none">
 					<line x1="44.3536" y1="1.35355" x2="0.51293" y2="45.1942" stroke="#373737" />
@@ -53,35 +58,33 @@
 				</button>
 			</div>
 			<div class="search__result">
-
 				<div class="search__category">
-					<label class="category__btn">
-						<input type="radio" checked name="category" />
-						<span>Real Weddings</span>
-					</label>
-					<label class="category__btn">
-						<input type="radio" name="category" />
-						<span>lifestyle</span>
-					</label>
-					<label class="category__btn">
-						<input type="radio" name="category" />
-						<span>weddings news</span>
-					</label>
-					<label class="category__btn">
-						<input type="radio" name="category" />
-						<span>vendors</span>
-					</label>
-					<label class="category__btn">
-						<input type="radio" name="category" />
-						<span>Gallery</span>
-					</label>
-					<label class="category__btn">
-						<input type="radio" name="category" />
-						<span>Gallery</span>
-					</label>
-				</div>
-				<div class="search__category-wrp">
-
+					<div class="search__category-wrp">
+						<label class="category__btn">
+							<input type="radio" checked name="category" />
+							<span>Real Weddings</span>
+						</label>
+						<label class="category__btn">
+							<input type="radio" name="category" />
+							<span>lifestyle</span>
+						</label>
+						<label class="category__btn">
+							<input type="radio" name="category" />
+							<span>weddings news</span>
+						</label>
+						<label class="category__btn">
+							<input type="radio" name="category" />
+							<span>vendors</span>
+						</label>
+						<label class="category__btn">
+							<input type="radio" name="category" />
+							<span>Gallery</span>
+						</label>
+						<label class="category__btn">
+							<input type="radio" name="category" />
+							<span>Gallery</span>
+						</label>
+					</div>
 				</div>
 
 
@@ -131,6 +134,7 @@
 
 		const searchTitleQuestion = document.querySelector('.search__title--question');
 		const searchTitleResult = document.querySelector('.search__title--result');
+		const searchTitleSearching = document.querySelector('.search__title--searching');
 		const searchTitleSpan = document.querySelector('.search__result-text');
 
 		const searchResult = document.querySelector('.search__result');
@@ -143,18 +147,21 @@
 		const category = document.querySelector('.search__category');
 
 		$(searchTitleResult).hide();
+		$(searchTitleSearching).hide();
 
 		btnSearch.addEventListener("click", () => {
 			searchWrap.classList.add("search__wrap--black");
 			$(searchTimer).delay(900).fadeIn("slow");
 			$(searchWrapInput).fadeOut("slow");
 			$(searchFooter).fadeOut("slow");
+			$(searchTitleQuestion).fadeOut("slow");
+			$(searchTitleSearching).delay(300).fadeIn("slow");
 
 
 			function result() {
 				searchWrap.classList.remove("search__wrap--black");
 				$(searchTimer).fadeOut("slow");
-				$(searchTitleQuestion).fadeOut("slow");
+				$(searchTitleSearching).fadeOut("slow");
 
 				$(searchTitleResult).delay(1500).fadeIn("slow");
 				searchTitleSpan.textContent = `“${searchInput.value}”`;
@@ -171,34 +178,6 @@
 			}
 			setTimeout(result, 3000);
 		});
-
-		const categorySection = document.querySelector('.search__category-wrp .search__category')
-
-
-		var $bl = $(".search__category-wrp"),
-			$th = $(".search__category"),
-			blW = $bl.outerWidth(),
-			blSW = $bl[0].scrollWidth,
-			wDiff = blSW / blW - 1, // widths difference ratio
-			mPadd = 60, // Mousemove Padding
-			damp = 20, // Mousemove response softness
-			mX = 0, // Real mouse position
-			mX2 = 0, // Modified mouse position
-			posX = 0,
-			mmAA = blW - mPadd * 2, // The mousemove available area
-			mmAAr = blW / mmAA; // get available mousemove fidderence ratio
-
-		$bl.mousemove(function (e) {
-			mX = e.pageX - this.offsetLeft;
-			mX2 = Math.min(Math.max(0, mX - mPadd), mmAA) * mmAAr;
-		});
-
-		setInterval(function () {
-			posX += (mX2 - posX) / damp; // zeno's paradox equation "catching delay"
-			$th.css({
-				marginLeft: -posX * wDiff,
-			});
-		}, 10);
 	</script>
 </body>
 
