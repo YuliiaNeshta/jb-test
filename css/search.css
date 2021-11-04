@@ -403,15 +403,23 @@
 	 position: relative;
 	 width: 100vw;
 	 max-width: 100%;
-	 margin-left: -40px !important;
-	 padding-left: 40px;
+	 margin-left: -20px !important;
+	 padding-left: 20px;
+}
+ .search__category-wrp::after {
+	 content: '';
+	 min-width: 20px;
+	 display: block;
+	 height: 1px;
 }
  @media screen and (max-width: 1024px) {
 	 .search__category {
 		 overflow-x: auto;
 		 width: 100vw;
-		 padding-left: 40px;
-		 margin-left: -41px;
+		 padding-left: 20px;
+		 margin-left: -21px;
+		 margin-top: 0;
+		 margin-bottom: 15px;
 	}
 }
  .search__category.show {
@@ -479,6 +487,9 @@
 	 display: inline-block;
 	 margin: 0 1.25rem 1.25rem 0;
 	 position: relative;
+}
+ .category__btn:last-child {
+	 margin-right: 0;
 }
  .category__btn input[type="radio"] {
 	 z-index: -1;
