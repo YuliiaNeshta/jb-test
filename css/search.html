@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Search</title>
+	<link rel="stylesheet" href="./css/style.css" />
+	<link rel="stylesheet" href="./css/search.css" />
+</head>
+<div class="remodal-bg">
+	<button class="btn search-btn">
+		open search
+	</button>
+</div>
+
+<div class="search__wrap">
+
+
+	<div class="search">
+
+		<div class="search__header">
+			<h1 class="search__title search__title--question">
+				What are you looking for?
+			</h1>
+			<h1 class="search__title search__title--result">
+				Search results for
+				<span class="search__result-text"></span>
+			</h1>
+			<span class="search__title search__title--searching">
+				Searching...
+			</span>
+			<button class="search__close">
+				<svg xmlns="http://www.w3.org/2000/svg" width="45" height="46" viewBox="0 0 45 46" fill="none">
+					<line x1="44.3536" y1="1.35355" x2="0.51293" y2="45.1942" stroke="#373737" />
+					<line x1="0.353553" y1="0.646447" x2="44.1942" y2="44.4871" stroke="#373737" />
+				</svg>
+			</button>
+		</div>
+		<div class="search__body">
+			<div class="timer search-timer">
+				<span class="timer__text">working</span>
+				<div class="timer__circle--right">
+					<span class="timer__span timer__span--right">
+					</span>
+				</div>
+				<div class="timer__circle--left">
+					<span class="timer__span timer__span--left">
+					</span>
+				</div>
+			</div>
+			<div class="search__wrap-input">
+				<input type="text" class="search__input" placeholder="Start typing. E.x.'Summer' or 'New York'" />
+				<button class="search__btn btn">
+					search
+					<div class="search__btn-icon"></div>
+				</button>
+			</div>
+			<div class="search__result">
+				<div class="search__category">
+					<div class="search__category-wrp">
+						<label class="category__btn">
+							<input type="radio" checked name="category" />
+							<span>Real Weddings</span>
+						</label>
+						<label class="category__btn">
+							<input type="radio" name="category" />
+							<span>lifestyle</span>
+						</label>
+						<label class="category__btn">
+							<input type="radio" name="category" />
+							<span>weddings news</span>
+						</label>
+						<label class="category__btn">
+							<input type="radio" name="category" />
+							<span>vendors</span>
+						</label>
+						<label class="category__btn">
+							<input type="radio" name="category" />
+							<span>Gallery</span>
+						</label>
+						<label class="category__btn">
+							<input type="radio" name="category" />
+							<span>Gallery</span>
+						</label>
+					</div>
+				</div>
+
+
+				<div class="search__result-blocks"></div>
+				<div class="search__btn-wrap">
+					<button class="btn search__btn-more search__btn">all weddings<div class="search__btn-icon"></div></button>
+				</div>
+
+
+
+				<div class="search__footer">
+					<p class="search__footer-text">
+						Start typing to search for incredible real weddings, reliable local
+						vendors or magnificent weddings inspiration from our blog and gallery.
+					</p>
+					<a href="#" class="search__logo">
+						<img class="search__logo--rotate-text" src="./img/search/circle-logo-text.svg" alt="" />
+						<img class="search__logo-icon" src="./img/search/logo.svg" alt="" />
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<body>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+		integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script>
+		const searchOpen = document.querySelector('.search-btn');
+		const searchWrapper = document.querySelector('.search');
+		const closeBtn = document.querySelector('.search__close');
+
+
+		searchOpen.addEventListener('click', () => {
+			searchWrapper.classList.add('open')
+		});
+
+		closeBtn.addEventListener('click', () => {
+			searchWrapper.classList.remove('open')
+		})
+
+		const btnSearch = document.querySelector(".search__btn");
+		const searchWrap = document.querySelector(".search__wrap");
+		const searchWrapInput = document.querySelector(".search__wrap-input");
+
+		const searchTitleQuestion = document.querySelector('.search__title--question');
+		const searchTitleResult = document.querySelector('.search__title--result');
+		const searchTitleSearching = document.querySelector('.search__title--searching');
+		const searchTitleSpan = document.querySelector('.search__result-text');
+
+		const searchResult = document.querySelector('.search__result');
+		const searchFooter = document.querySelector('.search__footer');
+		const searchTimer = document.querySelector('.search-timer');
+		const searchInput = document.querySelector('.search__input');
+		const searchResultText = document.querySelector('.search__result-text');
+		const allPostBtn = document.querySelector('.search__btn-wrap');
+
+		const category = document.querySelector('.search__category');
+
+		$(searchTitleResult).hide();
+		$(searchTitleSearching).hide();
+
+		btnSearch.addEventListener("click", () => {
+			searchWrap.classList.add("search__wrap--black");
+			$(searchTimer).delay(900).fadeIn("slow");
+			$(searchWrapInput).fadeOut("slow");
+			$(searchFooter).fadeOut("slow");
+			$(searchTitleQuestion).fadeOut("slow");
+			$(searchTitleSearching).delay(700).fadeIn("slow");
+
+
+			function result() {
+				searchWrap.classList.remove("search__wrap--black");
+				$(searchTimer).fadeOut("slow");
+				$(searchTitleSearching).fadeOut("slow");
+
+				$(searchTitleResult).delay(1500).fadeIn("slow");
+				searchTitleSpan.textContent = `“${searchInput.value}”`;
+				$(searchWrapInput).css("display", "flex")
+					.hide()
+					.delay(1300)
+					.fadeIn("slow");
+				$(category).css("display", "flex")
+					.hide()
+					.delay(1600)
+					.fadeIn("slow");
+				$(allPostBtn).delay(1900).fadeIn("slow");
+
+			}
+			setTimeout(result, 3000);
+		});
+	</script>
+</body>
+
+</html>
