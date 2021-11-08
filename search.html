@@ -147,7 +147,7 @@
 		const category = document.querySelector('.search__category');
 
 		$(searchTitleResult).hide();
-		$(searchTitleSearching).hide();
+		// $(searchTitleSearching).hide();
 
 		btnSearch.addEventListener("click", () => {
 			searchWrap.classList.add("search__wrap--black");
@@ -155,7 +155,7 @@
 			$(searchWrapInput).fadeOut("slow");
 			$(searchFooter).fadeOut("slow");
 			$(searchTitleQuestion).fadeOut("slow");
-			$(searchTitleSearching).delay(700).fadeIn("slow");
+			$(searchTitleSearching).hide().delay(700).fadeIn("slow");
 
 
 			function result() {
@@ -163,18 +163,17 @@
 				$(searchTimer).fadeOut("slow");
 				$(searchTitleSearching).fadeOut("slow");
 
-				$(searchTitleResult).delay(1500).fadeIn("slow");
+				$(searchTitleResult).delay(700).fadeIn("slow");
 				searchTitleSpan.textContent = `“${searchInput.value}”`;
 				$(searchWrapInput).css("display", "flex")
 					.hide()
-					.delay(1300)
+					.delay(900)
 					.fadeIn("slow");
 				$(category).css("display", "flex")
 					.hide()
-					.delay(1600)
+					.delay(1100)
 					.fadeIn("slow");
-				$(allPostBtn).delay(1900).fadeIn("slow");
-
+				$(allPostBtn).delay(1300).fadeIn("slow");
 			}
 			setTimeout(result, 3000);
 		});
