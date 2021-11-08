@@ -184,11 +184,11 @@
 }
  .search__wrap.search__wrap--black .search {
 	 background: #000;
-	 transition: all 0.6s ease 500ms;
+	 transition: all 0.4s ease 400ms;
 }
  .search__wrap.search__wrap--black .search__title {
 	 color: #fff;
-	 transition: all 0.8s ease 700ms;
+	 transition: all 0.6s ease 400ms;
 }
  .search__wrap.search__wrap--black .search__close svg line {
 	 transition: all 0.6s ease 500ms;
@@ -403,19 +403,31 @@
 	 position: relative;
 	 width: 100vw;
 	 max-width: 100%;
-	 margin-left: -20px !important;
-	 padding-left: 20px;
+	 margin-left: -6.25vw;
+	 padding-left: 6.25vw;
 }
  .search__category-wrp::after {
 	 content: '';
-	 min-width: 20px;
+	 min-width: 6.25vw;
 	 display: block;
 	 height: 1px;
 }
+ @media screen and (max-width: 768px) {
+	 .search__category-wrp::after {
+		 min-width: 20px;
+	}
+}
  @media screen and (max-width: 1024px) {
 	 .search__category {
+		 padding-left: 6.25vw;
+		 margin-left: -6.25vw;
 		 overflow-x: auto;
 		 width: 100vw;
+		 margin-top: 0px;
+	}
+}
+ @media screen and (max-width: 768px) {
+	 .search__category {
 		 padding-left: 20px;
 		 margin-left: -21px;
 		 margin-top: 0;
@@ -449,6 +461,9 @@
 	 background-repeat: no-repeat;
 	 width: 2px;
 	 height: 5px;
+}
+ .search__title--searching {
+	 display: none;
 }
  .btn {
 	 cursor: pointer;
@@ -513,13 +528,20 @@
 	 padding: 0rem 2.4rem;
 	 white-space: nowrap;
 }
+ @media screen and (max-width: 1024px) {
+	 .category__btn span {
+		 height: 50px;
+		 font-size: 7px;
+		 display: flex;
+		 align-items: center;
+	}
+}
  @media screen and (max-width: 991px) {
 	 .category__btn span {
 		 display: flex;
 		 justify-content: center;
 		 align-items: center;
-		 height: 3rem;
-		 font-size: 0.625rem;
+		 font-size: 12px;
 	}
 }
  .category__btn input[type="radio"]:checked + span {
@@ -527,12 +549,20 @@
 	 color: #fff;
 	 border: 0.0938rem solid #cb9274;
 }
+ @media screen and (max-width: 1024px) {
+	 .category__btn input[type="radio"]:checked + span {
+		 height: 50px;
+		 font-size: 7px;
+		 display: flex;
+		 align-items: center;
+	}
+}
  @media screen and (max-width: 991px) {
 	 .category__btn input[type="radio"]:checked + span {
 		 display: flex;
 		 justify-content: center;
 		 align-items: center;
-		 height: 3rem;
+		 font-size: 12px;
 	}
 }
  
