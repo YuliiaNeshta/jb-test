@@ -523,7 +523,7 @@
 	 letter-spacing: 0.215em;
 	 text-transform: uppercase;
 	 color: #333;
-	 border: 0.0938rem solid #e0e0e0;
+	 border: 1px solid #e0e0e0;
 	 height: 5rem;
 	 padding: 0rem 2.4rem;
 	 white-space: nowrap;
@@ -564,5 +564,11 @@
 		 align-items: center;
 		 font-size: 12px;
 	}
+}
+ .tab {
+	 display: none;
+}
+ .tab.js-active {
+	 display: block;
 }
  
