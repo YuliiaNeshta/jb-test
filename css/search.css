@@ -160,6 +160,9 @@
 	 color: #cb9274;
 	 text-decoration: underline;
 }
+ .search__result-blocks {
+	 overflow-y: auto;
+}
  .search__result {
 	 flex: 1 1 auto;
 	 margin: 20px 0px;
@@ -444,10 +447,13 @@
  .search__btn-more {
 	 min-width: 360px;
 	 width: 100%;
+	 margin-top: 100px;
+	 margin-bottom: 120px;
 }
  @media screen and (max-width: 1024px) {
 	 .search__btn-more {
 		 min-width: 230px;
+		 margin-top: 60px;
 	}
 }
  .search__btn-more--icon {
