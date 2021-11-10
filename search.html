@@ -82,7 +82,47 @@
 
 				<div class="search__result-blocks">
 					<div class="tab">1</div>
-					<div class="tab">2</div>
+					<div class="tab">
+						Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia quaerat neque possimus ipsam
+						voluptate amet aspernatur eveniet adipisci excepturi aliquid voluptatem consequuntur quasi, molestias
+						dolore, saepe illum eum eligendi porro dignissimos dicta, exercitationem unde voluptatum? Molestiae,
+						praesentium ipsum rem perspiciatis error aperiam, culpa non minus soluta nisi impedit numquam magnam
+						delectus voluptas nemo debitis animi maiores itaque. Dolores explicabo at nesciunt omnis vero ullam iusto
+						doloribus fuga unde quo qui quisquam totam maxime aut rem molestiae, placeat voluptatem ipsam incidunt?
+						Natus molestias error ipsa blanditiis voluptatibus, unde sequi est. Doloremque quo earum sunt dolorum
+						incidunt facere, maiores, modi dolore dicta, aliquid consectetur enim minus saepe sequi. Molestias cumque
+						quasi eum iusto accusamus adipisci nisi earum, vel magni, voluptatum, necessitatibus minima consectetur
+						dicta molestiae rerum possimus non itaque fuga pariatur eius voluptate nesciunt. Labore nemo, animi
+						inventore error reiciendis excepturi nostrum amet illo veniam tenetur id delectus consequatur recusandae
+						nihil veritatis.
+
+						Consequatur numquam quis accusamus repellendus illo. Modi, esse numquam! At nam veritatis
+						unde laborum incidunt officiis eos cupiditate quas molestias pariatur ea inventore mollitia hic consequuntur
+						tempora eligendi aliquid aspernatur quos excepturi facere, impedit, consequatur qui. Placeat, enim
+						temporibus! Laboriosam, perspiciatis inventore numquam provident dolorem maiores doloribus nisi iste
+						expedita consequatur at perferendis alias explicabo, illo accusamus, doloremque corrupti. Minus perferendis
+						in magnam dolor tempora, suscipit maiores provident placeat, laboriosam necessitatibus eum sunt nam est
+						expedita assumenda labore maxime adipisci sequi nihil consequuntur dignissimos libero! Modi, assumenda, qui
+						asperiores temporibus veritatis rerum molestiae autem corporis eos nobis neque magnam quo! Dolore
+						dignissimos assumenda voluptates quia distinctio nam eum ad ratione rem? Fugit vel officiis assumenda
+						veritatis accusantium sapiente recusandae voluptatem unde asperiores molestias, illo voluptatibus illum,
+						placeat omnis doloremque nisi ab eos voluptatum. Quam est libero quas tempore ipsum natus odit sequi,
+						tempora, esse recusandae qui vero culpa incidunt maxime?
+
+						Consequatur numquam quis accusamus repellendus illo. Modi, esse numquam! At nam veritatis
+						unde laborum incidunt officiis eos cupiditate quas molestias pariatur ea inventore mollitia hic consequuntur
+						tempora eligendi aliquid aspernatur quos excepturi facere, impedit, consequatur qui. Placeat, enim
+						temporibus! Laboriosam, perspiciatis inventore numquam provident dolorem maiores doloribus nisi iste
+						expedita consequatur at perferendis alias explicabo, illo accusamus, doloremque corrupti. Minus perferendis
+						in magnam dolor tempora, suscipit maiores provident placeat, laboriosam necessitatibus eum sunt nam est
+						expedita assumenda labore maxime adipisci sequi nihil consequuntur dignissimos libero! Modi, assumenda, qui
+						asperiores temporibus veritatis rerum molestiae autem corporis eos nobis neque magnam quo! Dolore
+						dignissimos assumenda voluptates quia distinctio nam eum ad ratione rem? Fugit vel officiis assumenda
+						veritatis accusantium sapiente recusandae voluptatem unde asperiores molestias, illo voluptatibus illum,
+						placeat omnis doloremque nisi ab eos voluptatum. Quam est libero quas tempore ipsum natus odit sequi,
+						tempora, esse recusandae qui vero culpa incidunt maxime?
+
+					</div>
 					<div class="tab">3</div>
 					<div class="tab">4</div>
 					<div class="tab">5</div>
@@ -150,7 +190,7 @@
 
 		$(searchTitleResult).hide();
 		$(searchTabsResult).hide();
-		// $(searchTitleSearching).hide();
+		$(searchTitleSearching).hide();
 
 		function searchAnimation() {
 
@@ -159,16 +199,12 @@
 			$(searchWrapInput).fadeOut("slow");
 			$(searchFooter).fadeOut("slow");
 			$(searchTitleQuestion).fadeOut("slow");
-			$(searchTitleSearching)
-				.hide()
-				.delay(700)
-				.fadeIn("slow");
+			$(searchTitleSearching).delay(700).fadeIn("slow");
 
 			function result() {
 				searchWrap.classList.remove("search__wrap--black");
 				$(searchTimer).fadeOut("slow");
 				$(searchTitleSearching).fadeOut("slow");
-
 
 				$(searchTitleResult).delay(700).fadeIn("slow");
 				searchTitleSpan.textContent = `“${searchInput.value}”`;
